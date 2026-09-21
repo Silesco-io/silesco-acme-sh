@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "component": "silesco-acme-sh",
+  "locale": "ru",
+  "messages": {
+    "provider.regru.help": {"message": "Настройте доступ к API и разрешите публичный исходящий IP сервера, на котором работает acme.sh. acme.sh создаёт и удаляет проверочные записи DNS. Используйте альтернативный пароль API. Не копируйте IP-адреса из старых примеров.", "description": "reg.ru setup guidance", "placeholders": {}},
+    "provider.regru.username.label": {"message": "Логин учётной записи REG.RU", "description": "API username field", "placeholders": {}},
+    "provider.regru.username.help": {"message": "Логин учётной записи, которой принадлежит DNS-зона в REG.RU.", "description": "API username help", "placeholders": {}},
+    "provider.regru.password.label": {"message": "Альтернативный пароль API", "description": "API password field", "placeholders": {}},
+    "provider.regru.password.help": {"message": "Создайте альтернативный пароль в настройках API REG.RU. Не помещайте его в журналы или аргументы команд.", "description": "API password help", "placeholders": {}}
+  }
+}

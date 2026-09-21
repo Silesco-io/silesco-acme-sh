@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "component": "silesco-acme-sh",
+  "locale": "en",
+  "messages": {
+    "provider.regru.help": {"message": "Configure API access and allow the public outbound IP of the server running acme.sh. acme.sh creates and removes DNS challenge records. Use an API alternative password. Do not copy IP addresses from old examples.", "description": "reg.ru setup guidance", "placeholders": {}},
+    "provider.regru.username.label": {"message": "REG.RU account login", "description": "API username field", "placeholders": {}},
+    "provider.regru.username.help": {"message": "The account login associated with the DNS zone in REG.RU.", "description": "API username help", "placeholders": {}},
+    "provider.regru.password.label": {"message": "API alternative password", "description": "API password field", "placeholders": {}},
+    "provider.regru.password.help": {"message": "Create an alternative password in REG.RU API settings. Do not put it in logs or command arguments.", "description": "API password help", "placeholders": {}}
+  }
+}

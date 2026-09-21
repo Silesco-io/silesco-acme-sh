@@ -1,5 +1,22 @@
 # Текущее состояние
 
+## PHP SDK 0.1.0-alpha.1 — 2026-09-21
+
+Applied architecture: 1.23.0 / ADR-091. Implemented framework-independent catalog,
+immutable CertificateRequest, Executor interface and bounded Operation results.
+Complete inventory: 191 pinned acme.sh3.1.4 drivers; reviewed form: REG.RU only;
+live provider accounts tested: zero. This is not full DNS-provider enablement.
+Offline tests, generated PHPDoc reference, ru/en parity and closed package export
+are provided. Wizard owns Silesco execution adapter; no shell or local runner here.
+Next gate: integrate real HTTP-01 executor and live LE-staging acceptance; protected
+DNS credentials transport and remaining form reviews stay explicitly incomplete.
+See docs/integration.md. Previous scaffold status below is historical.
+
+Verified:618 assertions on Linux PHP8.3 pinned FrankenPHP container with network
+disabled/read-only mount; same tests PHP8.5.3 host. Catalog offline reproduction:
+PASS191drivers. PHPDoc reference regeneration/check: PASS. Closed offline export:
+13package files plusSHA256SUMS. No LE request, realcredential or account mutation.
+
 ## Received architecture 1.23.0 — 2026-09-21
 
 ADR-091 / spec/24_wizard_yii_bootstrap.md is the current migration target.

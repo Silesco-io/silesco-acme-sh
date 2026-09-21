@@ -1,5 +1,16 @@
 # silesco-acme-sh
 
+## Applied implementation baseline
+
+Architecture 1.23.0 (ADR-091); public PHP SDK0.1.0-alpha.1 under Apache-2.0.
+Inputs: canonical domain list, idempotency UUID, pinned provider ID and opaque
+credential reference. Outputs: typed immutable intent and sanitized progress.
+No default filesystem writes, listeners, network, process execution or secret
+storage. Catalog ships as immutable package resources; build tools write only
+explicit output paths. Compatibility and actual coverage: docs/integration.md.
+The older pending-sync/scaffold statements below describe historical preparation,
+not the current snapshot. Full provider forms and local executor remain backlog.
+
 ## Назначение
 
 Независимая PHP-библиотека над upstream acme.sh, переиспользуемая вне Yii3/Silesco. Планируемое Composer-имя: `silesco-io/acme-sh`. Origin: `git@github.com:Silesco-io/silesco-acme-sh.git`.

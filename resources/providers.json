@@ -1,0 +1,1750 @@
+{
+  "schemaVersion": 1,
+  "upstream": {
+    "release": "3.1.4",
+    "commit": "3661fd86b6304115e42f43910e6dd452ab9866d6",
+    "image": "ghcr.io/acmesh-official/acme.sh@sha256:08bad323dd6537ea2caba64260ef6e70e96057c4d9214afb9c07861db26653d9"
+  },
+  "providers": {
+    "dns_1984hosting": {
+      "displayName": "1984.hosting",
+      "scriptSha256": "6c34f6e31b6719a06f1083978fd22e48cf6739a97c14ef6c2cc840e106f31bd5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_1984hosting.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_1984hosting",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_acmedns": {
+      "displayName": "acme-dns Server API",
+      "scriptSha256": "8a325d23ad708b7abcbd13e9d5d42aab70aa9e4a81095f709f56448064660f7a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_acmedns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_acmedns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_acmeproxy": {
+      "displayName": "AcmeProxy Server API",
+      "scriptSha256": "f53a771157d89102455ec588e251993a1317f71002ba788c6a8db1e19db9da21",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_acmeproxy.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_acmeproxy",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_active24": {
+      "displayName": "Active24.cz",
+      "scriptSha256": "034f2207a4e8d12232fae305244e5f4d2ab0c825ad8e33cfe9e43934a1aaa535",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_active24.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_active24",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ad": {
+      "displayName": "AlwaysData.com",
+      "scriptSha256": "44aa59e1429cb58be59a9ce15441b88db92f83c8a11438fe1b21880c91d52313",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ad.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_ad",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ali": {
+      "displayName": "AlibabaCloud.com",
+      "scriptSha256": "6cfcca209d54747dc7b48fea9aa4a2c04a6017c4464f8f23a077e3eaa187c427",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ali.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_ali",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_alviy": {
+      "displayName": "Alviy.com",
+      "scriptSha256": "616b06719ef41b8cd16ab1cc65e17d280b222cd9b2e217c63f42653138eaa907",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_alviy.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_alviy",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_anx": {
+      "displayName": "Anexia.com CloudDNS",
+      "scriptSha256": "eab46ab94a4e094643fe0667c8ee648ece48c07609792841c3651ab4ede16d55",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_anx.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_anx",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_artfiles": {
+      "displayName": "ArtFiles.de",
+      "scriptSha256": "176a938d088cf836a969ca54f3238bc051701e31e679ae13713eeccc01cb1696",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_artfiles.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_artfiles",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_arubabusiness": {
+      "displayName": "ArubaBusiness",
+      "scriptSha256": "07aa4a9929b041904462f9c69e2e4b315f3b726ab27904f7690d6c690e832e94",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_arubabusiness.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_arubabusiness",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_arvan": {
+      "displayName": "ArvanCloud.ir",
+      "scriptSha256": "6088f5b5f3c57d36e363b50c37838dbfaa046f1053467d2679b361666d3b1c08",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_arvan.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_arvan",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_aurora": {
+      "displayName": "versio.nl AuroraDNS",
+      "scriptSha256": "73d00661d292c669e153a94dc7833e47c93bae61bb8950d3e38a8909e154f00f",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_aurora.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_aurora",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_autodns": {
+      "displayName": "InternetX autoDNS",
+      "scriptSha256": "ddb7b6ac4ec6fa04890598de26f19800a614b97fae0fac579558c436c93117ae",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_autodns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_autodns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_aws": {
+      "displayName": "Amazon AWS Route53 domain API",
+      "scriptSha256": "5366bc36dfcf8dfb16440e99bd1c744b7fa99741a42986773ca269fd12d0550a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_aws.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_aws",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_azion": {
+      "displayName": "Azion.om",
+      "scriptSha256": "071ae4c68717a78b7e5bfdbd3e7bde3887fb9b8ffb0f319b24ca6b198488cbea",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_azion.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_azion",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_azure": {
+      "displayName": "Azure",
+      "scriptSha256": "477c30a0ffcd6f626389823de744ab3e8c58f2fcd2de9e9a2013c5dcc9db803f",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_azure.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_azure",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_baidu": {
+      "displayName": "Baidu Cloud BCD DNS",
+      "scriptSha256": "8d81db00c62d4d22039afdcecd8ef33878c61ba7055d292d2af78413b99ca7bb",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_baidu.sh",
+      "documentationUrl": "https://cloud.baidu.com/doc/BCD/",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_beget": {
+      "displayName": "Beget.com",
+      "scriptSha256": "d069d4551ccc7c237f64ad729d83ad9dfd09a72fef834f494ddfcedc3765c319",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_beget.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_beget",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_bh": {
+      "displayName": "Best-Hosting.cz",
+      "scriptSha256": "b96e4af48ce0d476af2cdec41efc473261143ebc997d9640af44000ebf096fd5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_bh.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_bh",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_bhosted": {
+      "displayName": "bHosted.nl DNS API",
+      "scriptSha256": "b92361ca8fb614ac00b0e3d26aedd66256bf5b0a6a80039e054a42131a99e5e1",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_bhosted.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_bhosted",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_bookmyname": {
+      "displayName": "BookMyName.com",
+      "scriptSha256": "7362b8ae77b0bf981b89cfb5cd6851a564e0d436871bc14b139a627e4e00f796",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_bookmyname.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_bookmyname",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_bunny": {
+      "displayName": "Bunny.net",
+      "scriptSha256": "7e6d55e0068b4c9f1fe6be33239db704ffaa4a297770a496dd7819dae9edc2b7",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_bunny.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_bunny",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_calrissia": {
+      "displayName": "Calrissia.be DNS API",
+      "scriptSha256": "4967642cc78dd50441d2f725dc595b0ae053be613407a801982e68e8620c15fb",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_calrissia.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_calrissia",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cdmon": {
+      "displayName": "cdmon",
+      "scriptSha256": "72c971ba00a8be1b8aa3491c5f4e39928f51cbecfac88a1789e77001372aa910",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cdmon.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_cdmon",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cf": {
+      "displayName": "CloudFlare",
+      "scriptSha256": "9628ee8238cb3f9cfa1b1a985c0e9593436a3e4f8a9d65a6f775b981be9e76c8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cf.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_cf",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_clouddns": {
+      "displayName": "vshosting.cz CloudDNS",
+      "scriptSha256": "0be5c177ee35388ceb569c8ba8ca3365d98dd2900fa2498a1b1d36587e66c3cc",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_clouddns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_clouddns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cloudns": {
+      "displayName": "ClouDNS.net",
+      "scriptSha256": "ca714dd0a542ac7ba599bb8c52623a2eda0e0358c3d58bc93ebc4fab6a81d50d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cloudns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_cloudns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cn": {
+      "displayName": "Core-Networks.de",
+      "scriptSha256": "4be81d0ed1815137199f735b917c2697706474eca27a2f0c48e3b36ce0caade9",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cn.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_cn",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_comlaude": {
+      "displayName": "comlaude.com",
+      "scriptSha256": "d24c0b61a7fbcc5b20fb1ebf410ebeb0e07036f74d4e5554e24a281e458f3894",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_comlaude.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_comlaude",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_conoha": {
+      "displayName": "ConoHa.jp",
+      "scriptSha256": "f42f0a7a84b9e39c124a7e99786b53e74d89d6f7538926fc8c2655402997d005",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_conoha.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_conoha",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_constellix": {
+      "displayName": "Constellix.com",
+      "scriptSha256": "1787eda965d33cd748d4fc4f6ed4f32f49f90c0bf07c3016bbd164b80296ecc6",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_constellix.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_constellix",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cpanel": {
+      "displayName": "cPanel Server API",
+      "scriptSha256": "fd91b211c80cf10c38c63e862fb13020d84060c5a95b45568cfc53436e5f2a00",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cpanel.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_cpanel",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cpanel_uapi": {
+      "displayName": "cPanel UAPI",
+      "scriptSha256": "681e43a9ee6dc17823e77df437b26959602fc951a44ba6768f4702ae5d7943a8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cpanel_uapi.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_cpanel_uapi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_creoline": {
+      "displayName": "creoline",
+      "scriptSha256": "dcd5a3943b34420ef6d20cbf3f6167d73bda1e2a79fdcfdc425e83d5a0736b51",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_creoline.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_creoline",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_curanet": {
+      "displayName": "Curanet.dk",
+      "scriptSha256": "0cdfc518048298dd3c0580971c84ee0ab0c5c543738e0576883ecd3030907d8c",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_curanet.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_curanet",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_cyon": {
+      "displayName": "cyon.ch",
+      "scriptSha256": "220a6f3e32e0cc537c728adf4e19a55fe6f3775aee0b47a3ad564b9da76d6199",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_cyon.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_cyon",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_czechia": {
+      "displayName": "[",
+      "scriptSha256": "181100bbd75d23b6c798f73a5e66488b9092908badb5ecf5a40f48215d84319d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_czechia.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_da": {
+      "displayName": "DirectAdmin Server API",
+      "scriptSha256": "6ebae62f5944b5273b0b57d876564330c809fc97a8cae40b0f266e4cb29e83b5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_da.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_da",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ddnss": {
+      "displayName": "DDNSS.de",
+      "scriptSha256": "8d03800e4b75a19eb698603b347ab6ef26be26f04e99a9f7bb1532a426dc95d3",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ddnss.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_ddnss",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_desec": {
+      "displayName": "deSEC.io",
+      "scriptSha256": "7b54708d30b39adc8e5966643d6780a01676633c2a96d87205e1a8e55b47a349",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_desec.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_desec",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_df": {
+      "displayName": "DynDnsFree.de",
+      "scriptSha256": "ca4c59edcf7fdadaf1f5d6747d9b1ed47677e5b24f77c4df454c5afa3eff4545",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_df.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_df",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dgon": {
+      "displayName": "DigitalOcean.com",
+      "scriptSha256": "ddc3b8f13b237c8f016d95594f3e4ab575643e248f68f9a348a9e30b9ee003f0",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dgon.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dgon",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dnsexit": {
+      "displayName": "DNSExit.com",
+      "scriptSha256": "3281901b21b84366871da6cf171616933e13dc9f51f3ce3333753b2aa8f3190b",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dnsexit.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_dnsexit",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dnshome": {
+      "displayName": "dnsHome.de",
+      "scriptSha256": "7bc9f3608193b1bc771f5ce49f182a11eab43f8c697d43c60603a0523713b623",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dnshome.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_dnshome",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dnsimple": {
+      "displayName": "DNSimple.com",
+      "scriptSha256": "cc79a59941d2972104710925da59d25b026e1aa6e4310000c6b7d41f51726323",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dnsimple.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dnsimple",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dnsservices": {
+      "displayName": "DNS.Services",
+      "scriptSha256": "8d3d848acd0713d7ff35765ef70861d0244243a38bc5de76868b87a1c9b7ed22",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dnsservices.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_dnsservices",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_doapi": {
+      "displayName": "Domain-Offensive do.de",
+      "scriptSha256": "c4dd1df118d093bc8212bbd29b302ac4831708381bd56f7a02bb13805550f3ff",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_doapi.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_doapi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_domeneshop": {
+      "displayName": "DomeneShop.no",
+      "scriptSha256": "8051f5b71b1fd30dad48471f774ff01cf5ff127a18a1c4ecc3d5e7e73349eea4",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_domeneshop.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_domeneshop",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dp": {
+      "displayName": "DNSPod.cn",
+      "scriptSha256": "a4b5b70c81235a033c6892359b09000097b88a0792b7029d14653a5494d282de",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dp.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dp",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dpi": {
+      "displayName": "DNSPod.com",
+      "scriptSha256": "227e756adb513cb26eca8fb4d36ea9253013515448aef7604c73da69f728e24d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dpi.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dpi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dreamhost": {
+      "displayName": "DreamHost.com",
+      "scriptSha256": "923c39612111f7552635f84276167cd7cbb011bad98ecb7b4f3f155ab5f5deb0",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dreamhost.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dreamhost",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_duckdns": {
+      "displayName": "DuckDNS.org",
+      "scriptSha256": "8be535b8d6270b7a37671da954d89c896df7af29c2f38d5029054ec315fe77af",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_duckdns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_duckdns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_durabledns": {
+      "displayName": "DurableDNS.com",
+      "scriptSha256": "a015d88b7a0956621b0357bf033adb1fbb63a4fb19ddda642e6653abf7f8c389",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_durabledns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_durabledns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dyn": {
+      "displayName": "Dyn.com",
+      "scriptSha256": "5b2a80bcb08fbe05695ccaaac93784673b1dcfd8d5073baadffc9f83a663e282",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dyn.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dyn",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dynu": {
+      "displayName": "Dynu.com",
+      "scriptSha256": "9b28bd15f524a185d9642c0ce352f48b3b0f7eb18bc8a09fee5cb58c2c63c963",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dynu.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_dynu",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_dynv6": {
+      "displayName": "DynV6.com",
+      "scriptSha256": "0fc07d448a6d6d25fadb38ff649d5de342bdfbc796586c85c17a1a44417e1fca",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_dynv6.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_dynv6",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_easydns": {
+      "displayName": "easyDNS.net",
+      "scriptSha256": "1acfb10021b1caeab2ca09bcac5ee851a415499793c068ee15d3bca6393f2c2c",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_easydns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_easydns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_edgecenter": {
+      "displayName": "EdgeCenter.ru",
+      "scriptSha256": "d6916071fa93590f8624ae4863cb046874c217c8b2d5ce4656949067d7ea85b5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_edgecenter.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_edgecenter",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_edgedns": {
+      "displayName": "Akamai.com Edge DNS",
+      "scriptSha256": "7a3bc8becb44f494af3a48bf7d0064280a2a19f89a43af83be2acf19c3c8d877",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_edgedns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_edgedns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_efficientip": {
+      "displayName": "efficientip.com",
+      "scriptSha256": "f0ceb5cf4e2e7f694e565da3e4a39fa21cd701a6116fbc5f46f064cc37553cf7",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_efficientip.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_efficientip",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_eurodns": {
+      "displayName": "EuroDNS",
+      "scriptSha256": "2a72e00617b6ce09eb5bbb38bb949b436a6e09dd6a285fb37256ac2e6b1bad03",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_eurodns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_eurodns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_euserv": {
+      "displayName": "EUserv.com",
+      "scriptSha256": "38a611950d7c0fb44c02f245a345302ab01eb9775d6519af48a3420f7496a945",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_euserv.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_euserv",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_exoscale": {
+      "displayName": "Exoscale.com",
+      "scriptSha256": "48f1d6cb53f070d8b8b0d73f53761c11191e5380c66373796852904b65ce3d43",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_exoscale.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_exoscale",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_firestorm": {
+      "displayName": "Firestorm.ch",
+      "scriptSha256": "dea0683f61b00f9ed1225282813cd4735e4c5c862945f7c20948c2d05348248a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_firestorm.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_firestorm",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_fornex": {
+      "displayName": "Fornex.com",
+      "scriptSha256": "8ed01e5be0be786d20c2eb9d7e80461c63c8b16d666960f1fb9e9c55168d3074",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_fornex.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_fornex",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_freedns": {
+      "displayName": "FreeDNS",
+      "scriptSha256": "4147a541147e53d3d54b80ae8b1acbc43fd73f214db71fa95b0c013c398db8ef",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_freedns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_freedns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_freemyip": {
+      "displayName": "FreeMyIP.com",
+      "scriptSha256": "84eeb5ba50249df9f81f0d43dee2e8cd4e17161e3a37b47c539a16ee3b3c1397",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_freemyip.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_freemyip",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_gandi_livedns": {
+      "displayName": "Gandi.net LiveDNS",
+      "scriptSha256": "196f2c18394030a82760eb38108c2980c6826656e7656b57cad5069c699495e4",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_gandi_livedns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_gandi_livedns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_gcloud": {
+      "displayName": "Google Cloud DNS",
+      "scriptSha256": "1c2e69de82f4d6efb538f057f79b63b9ffaa34dd6a0440c82b1349d6399a9a74",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_gcloud.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_gcloud",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_gcore": {
+      "displayName": "Gcore.com",
+      "scriptSha256": "9417cee5fa60a9fe150664c6fe720dab9bff70f3e319e8218a1ae53ed191ac90",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_gcore.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_gcore",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_gd": {
+      "displayName": "GoDaddy.com",
+      "scriptSha256": "c91194c623bb6df91d1c731d636807d6f65b81ca9c44568f2409bebe6e8f7b75",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_gd.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_gd",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_geoscaling": {
+      "displayName": "GeoScaling.com",
+      "scriptSha256": "7309d3165d890ebd202af78662d7418c85a8bf001bb6f8770ca2e8b0b2332bc0",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_geoscaling.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_geoscaling",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_glesys": {
+      "displayName": "Glesys",
+      "scriptSha256": "c0f90840c78204dbffac75c2b2d0ba4c38433652d4967fee5efbf9cdef155ef2",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_glesys.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_glesys",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_gname": {
+      "displayName": "GNAME",
+      "scriptSha256": "e90e55da92dd076dfef63f38eb8972dae2bd03d0554ca2754e4cc1dd53fb9107",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_gname.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_gname",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_googledomains": {
+      "displayName": "Google Domains",
+      "scriptSha256": "a30801cd98f269c071bc14cfded48ba910f381101e1e22c5d85840634a960826",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_googledomains.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_googledomains",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_he": {
+      "displayName": "Hurricane Electric HE.net",
+      "scriptSha256": "4d8de3b6ff6714f1f86c0c738c70434ee4edc685868301be55c06d30c9809a59",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_he.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_he",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_he_ddns": {
+      "displayName": "Hurricane Electric HE.net DDNS",
+      "scriptSha256": "8f7110981f2bd137df045b37642af3e9efc46ca571a707b0b704fd021d8d236e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_he_ddns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_he_ddns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_hetznercloud": {
+      "displayName": "Hetzner Cloud DNS",
+      "scriptSha256": "6428e5c07720c9e90284be199f86429e4213b57625bccb5ab3e7af068c93d3f5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_hetznercloud.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_hetznercloud",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_hexonet": {
+      "displayName": "Hexonet.com",
+      "scriptSha256": "818924739458598cbcc794e991c91987c5b427c7c160809397f17466c108116f",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_hexonet.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_hexonet",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_hostingde": {
+      "displayName": "Hosting.de",
+      "scriptSha256": "b0b634149e715fa83d4da7b776a08aa1a08b30f94d149b37d1adfec51889c9d1",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_hostingde.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_hostingde",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_hostinger": {
+      "displayName": "Hostinger",
+      "scriptSha256": "5bebba1cbca0d4ef6165bcd0496531f036ea2452d42688f095f48c917b2b9870",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_hostinger.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_hostinger",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_hostup": {
+      "displayName": "HostUp DNS",
+      "scriptSha256": "71ad36a12d166f98e4f33651fa8e74405f6ad4d489a04d6b3dddec1e7fc10c88",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_hostup.sh",
+      "documentationUrl": "https://developer.hostup.se/",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_huaweicloud": {
+      "displayName": "HuaweiCloud.com",
+      "scriptSha256": "d061fca6aeac15ab65f8941dab03524513b0e7f10c24167e75d550637f8429ef",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_huaweicloud.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_huaweicloud",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_infoblox": {
+      "displayName": "Infoblox.com",
+      "scriptSha256": "6cb2a691c5ff7d9b64c489e104fc9beff5a8e10554dbd5065e9525792ceac041",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_infoblox.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_infoblox",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_infoblox_uddi": {
+      "displayName": "Infoblox UDDI",
+      "scriptSha256": "2f8797ce030c3afd7d03b7f2149ef9ae10f546b8ff96104916ceacc8bb97382a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_infoblox_uddi.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_infoblox_uddi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_infomaniak": {
+      "displayName": "Infomaniak.com",
+      "scriptSha256": "82d53a597678d22f8a433d290c92950d59f299e8425d68a44a3d6c80ed14a735",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_infomaniak.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_infomaniak",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_internetbs": {
+      "displayName": "InternetBS.net",
+      "scriptSha256": "89d89cd8f78cd9eebaa969e054047165d53f73ee474caf53bb82c57e100c4657",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_internetbs.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_internetbs",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_inwx": {
+      "displayName": "INWX.de",
+      "scriptSha256": "5b2b1521871794afb70760e359795c61e1565f47a4c4cdbc370f8fdf4218171e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_inwx.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_inwx",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ionos": {
+      "displayName": "IONOS.de",
+      "scriptSha256": "a96e5d4ddc3be93bb35110c4ac493bbfe2b4795fa2a10c6059cd93251888e24d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ionos.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_ionos",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ionos_cloud": {
+      "displayName": "IONOS Cloud DNS",
+      "scriptSha256": "dec956e8de70ddd9b67d925547aa1a9e265a8a0436de5504e5f44fe6812046c3",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ionos_cloud.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_ionos_cloud",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ipprojects": {
+      "displayName": "IP-Projects DNS",
+      "scriptSha256": "f10f8ff59e20ce47068cf322dfac547e0842ee41c08da20722517ab561dab3ba",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ipprojects.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_ipprojects",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ipv64": {
+      "displayName": "IPv64.net",
+      "scriptSha256": "f887129a8c079b98a1a215f39a38ca3e45190faf88f20559e6681f9b72994f3a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ipv64.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_ipv64",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ispconfig": {
+      "displayName": "ISPConfig Server API",
+      "scriptSha256": "e24645b3308f47cfe43b314a6617d45cfb4fc71d9730b316ffc6b315d743601b",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ispconfig.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_ispconfig",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_jd": {
+      "displayName": "jdcloud.com",
+      "scriptSha256": "3bc3d3aab291ec7c9f1c016a9a60b9a3b5e08dbdf13961f936e078bad9d6faab",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_jd.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_jd",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_joker": {
+      "displayName": "Joker.com",
+      "scriptSha256": "3bd5b1f99ca96bdb5d8d846b4a992f41f6f79ad2861556304eaedfcfbdeebeff",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_joker.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_joker",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_kappernet": {
+      "displayName": "kapper.net",
+      "scriptSha256": "be18e8891ae6e853a0c7be6a86e7b635349765a6f3093e9b18e97c943812278c",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_kappernet.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_kappernet",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_kas": {
+      "displayName": "All-inkl Kas Server",
+      "scriptSha256": "c65c083ec5b4eb0d8b42a8df7c1a2fa7768b014222f611e703632029574185e2",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_kas.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_kas",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_kinghost": {
+      "displayName": "King.host",
+      "scriptSha256": "2e524056c0df660bec487465eeb19c46af72212d5b4427b6b1c40d525476a649",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_kinghost.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_kinghost",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_knot": {
+      "displayName": "Knot Server knsupdate",
+      "scriptSha256": "8206d00ca632549143d4d029744f9e1da970ef915bffa7afa0f4a0261b817882",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_knot.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_knot",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_la": {
+      "displayName": "dns.la",
+      "scriptSha256": "b3f3c6b4079c2de594f0f4e9b17a1a2b21b7eb9d9f2f52647fbadce10031b410",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_la.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_la",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_laodc": {
+      "displayName": "LaoDC DNS API Server",
+      "scriptSha256": "a1c9033deb304f092b89b079b914cbb0a4c718b5b8ba7fdb326ff4d6b36141b5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_laodc.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_laodc",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_leaseweb": {
+      "displayName": "Leaseweb.com",
+      "scriptSha256": "1d5af7c6f088268af695c18d232ec72d3af58844170719641737ca6ef797b44d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_leaseweb.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_leaseweb",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_level27": {
+      "displayName": "Level27",
+      "scriptSha256": "dd8fc6ce3092a152c0e2c999b963724d7ccfd2cfc77f027af90b52f2a32e5f41",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_level27.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_level27",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_lexicon": {
+      "displayName": "Lexicon DNS client",
+      "scriptSha256": "3c4425cf9e59d6214f50528deba4cce768621e81d424e57a824fac69a3111621",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_lexicon.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/How-to-use-lexicon-DNS-API",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_limacity": {
+      "displayName": "lima-city.de",
+      "scriptSha256": "abd74e9f4ebe1099f65cee3d409499e8aa254c2cd5cb3cd514ae6e96ecaf96d8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_limacity.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_limacity",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_linode": {
+      "displayName": "Linode.com (Old)",
+      "scriptSha256": "476b599d7bb15e0f03427d71ccdc1ac6ce8784ef64ef1d6957e31999180d2f7a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_linode.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_linode_v4": {
+      "displayName": "Linode.com",
+      "scriptSha256": "6b3ef9284f151be258e1783cf52794b507fad12dcc18d616b83b4e85b67370b5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_linode_v4.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_linode_v4",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_loopia": {
+      "displayName": "Loopia.se",
+      "scriptSha256": "abc4dbe3d182070e50dbcf6d079e0e9dbd1df9e7b624971c59360f4621480ea7",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_loopia.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_loopia",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_lua": {
+      "displayName": "LuaDNS.com",
+      "scriptSha256": "b8d837d332b2573f51778ce66b7169c5ef434bcd152d281c49945d80e4b2745d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_lua.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_lua",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_maradns": {
+      "displayName": "MaraDNS Server",
+      "scriptSha256": "51ab288f04add36026fa05ead7c5392af074faf918d9fd1f923f31fc739e6e3e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_maradns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_maradns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_me": {
+      "displayName": "DnsMadeEasy.com",
+      "scriptSha256": "4815916bf9fdcd56c3e1a8064f563f8b1202d5c15aa9f44db958d5c3029186cf",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_me.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_me",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_mgwm": {
+      "displayName": "mgw-media.de",
+      "scriptSha256": "55ee76efaf96e58de76f3020c0835772a50f6e54dcebc5381403dd631370800e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_mgwm.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_mgwm",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_miab": {
+      "displayName": "Mail-in-a-Box",
+      "scriptSha256": "1db669b4745e4ad2b469df0679483c40bd69eb03dd259e1f40bcac2e2e17a9bf",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_miab.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_miab",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_mijnhost": {
+      "displayName": "mijn.host",
+      "scriptSha256": "34d92e2c038f72803bae0bebb108eae123eef4a4a52c3f4e4951bf4464b98402",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_mijnhost.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_mijnhost",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_misaka": {
+      "displayName": "Misaka.io",
+      "scriptSha256": "f72c48a9c375d7aee74739120195d323292eded8ce834eb3e706bb57d8593c05",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_misaka.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_misaka",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_muumuu": {
+      "displayName": "muumuu-domain.com",
+      "scriptSha256": "aede352d4b45e796158ace80eae7e2ef3b0ed349d1672dcfdedb324ea564e4c7",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_muumuu.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_muumuu",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_myapi": {
+      "displayName": "Custom API Example",
+      "scriptSha256": "5a6b3729bc63f5333982eb0ced2cc4d17a90fc3107e2924b5155efb141f4cdb8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_myapi.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_myapi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_mydevil": {
+      "displayName": "MyDevil.net",
+      "scriptSha256": "fe00ff2db4366d8fc26cba08e66ee7b865f916159045dbf430b0696e0f18ffda",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_mydevil.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_mydevil",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_mydnsjp": {
+      "displayName": "MyDNS.JP",
+      "scriptSha256": "cd45d440c3fd5e25654d93c803cfa222bdc721792c786b9f267d7cace885fc4d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_mydnsjp.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_mydnsjp",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_mythic_beasts": {
+      "displayName": "Mythic-Beasts.com",
+      "scriptSha256": "48220ff2dc0de12e49a38fcdcde5affd48278c4090e235f9ae0372fcda775276",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_mythic_beasts.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_mythic_beasts",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_namecheap": {
+      "displayName": "NameCheap.com",
+      "scriptSha256": "aa35d98890891b34015a8a5a3d90ef12bb3490ded73d026bf99b8fd38a7c570e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_namecheap.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_namecheap",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_namecom": {
+      "displayName": "Name.com",
+      "scriptSha256": "7a3fd679fcc06eaf79d617b3ccd07c7a60b8cfaede7d4b9de60111bf700c857b",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_namecom.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_namecom",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_namesilo": {
+      "displayName": "NameSilo.com",
+      "scriptSha256": "2f8521f959b6f118703e3f105dca6b12647a6aca5d4f72a8801c026b02950c41",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_namesilo.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_namesilo",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nanelo": {
+      "displayName": "Nanelo.com",
+      "scriptSha256": "f805f8b6a881632cfe5a32a0df7eeba82d1577cec1c8be35cf7c9a51374471e0",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nanelo.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_nanelo",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nederhost": {
+      "displayName": "NederHost.nl",
+      "scriptSha256": "9bfa2ca5eebe0bd5371f906f2bd87c59b0edd63414c399b8ecb9f1f7a31fb165",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nederhost.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_nederhost",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_neodigit": {
+      "displayName": "Neodigit.net",
+      "scriptSha256": "023a64d3438e5a9f2e82d4e396139830fe1519df401d3b80d312a9243db0fbe7",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_neodigit.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_neodigit",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_netcup": {
+      "displayName": "netcup.eu",
+      "scriptSha256": "99b926dbd092e9b09ee56e8d763d5bb0551651afa0b279d3d463a8250bcb067f",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_netcup.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_netcup",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_netlify": {
+      "displayName": "Netlify.com",
+      "scriptSha256": "78c8cb43b0407d6c6e2a6c17ccb9b7a032d5504abed6fa5f603a57aded437512",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_netlify.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_netlify",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nic": {
+      "displayName": "nic.ru",
+      "scriptSha256": "6d3ab2269c3c18a1902edc26dbe9640238713d78f67cab2a8752985e082e75b8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nic.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_nic",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_njalla": {
+      "displayName": "Njalla",
+      "scriptSha256": "5c38cf20fa27663d472e49f240fde99a81ee2c25787ef280acbb8c63087541d9",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_njalla.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_njalla",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nm": {
+      "displayName": "NameMaster.de",
+      "scriptSha256": "b9a058ee6950f477368eebf42a0a613049842cf4edbc6560c44592a1300a398b",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nm.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_nm",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nsd": {
+      "displayName": "NLnetLabs NSD Server",
+      "scriptSha256": "6ca0dd0549188cf80d99f3b27a8699c2b9f54b8a785b31d316f64d659f8cf442",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nsd.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#nsd",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nsone": {
+      "displayName": "ns1.com",
+      "scriptSha256": "95512db0ec16e4eca466eece6a187f71378e05cb52824d68837d5ce535b23c0d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nsone.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_nsone",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nsupdate": {
+      "displayName": "nsupdate RFC 2136 DynDNS client",
+      "scriptSha256": "916ff21405afc64c7f2cea6f0f75e798a89f7d01910dbeaa62ab5324a8fe9e1b",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nsupdate.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_nsupdate",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_nw": {
+      "displayName": "Nexcess.net (NocWorx)",
+      "scriptSha256": "6b95a98dc59c97d33c622a604e94f721f3c9769fe37c7edc194c98c134416694",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_nw.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_nw",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_oci": {
+      "displayName": "Oracle Cloud Infrastructure (OCI)",
+      "scriptSha256": "81be24e55a918713119a284606416551345127704b6ed8eb1a54b58de86c7c7d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_oci.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/How-to-use-Oracle-Cloud-Infrastructure-DNS",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_omglol": {
+      "displayName": "omg.lol",
+      "scriptSha256": "d3d9a679749b5876d1fef64a272c945311965f577daf3895eddcd8bdb69c6584",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_omglol.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_omglol",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_one": {
+      "displayName": "one.com",
+      "scriptSha256": "1ce11419deedab2052708287efbd63dfffd5b76d9b9067e9671969864e5fe8e4",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_one.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_one",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_online": {
+      "displayName": "online.net",
+      "scriptSha256": "2069137ea82dbbc1dc2282e3c6ba58767df9e6d9993e64e0c06a7ee8129c970e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_online.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_online",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_openprovider": {
+      "displayName": "OpenProvider.eu",
+      "scriptSha256": "93990c33cf59939f40d46831a6d3dca3b4d263315d4f6fbb58a6c3424015a41a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_openprovider.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_openprovider",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_openprovider_rest": {
+      "displayName": "OpenProvider (REST)",
+      "scriptSha256": "81a911d10c00545813a8b486742b13fe6e7b0409d759867354ff7e109fb107be",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_openprovider_rest.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_openprovider_rest",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_openstack": {
+      "displayName": "OpenStack Designate API",
+      "scriptSha256": "e0edad3f25ebe888adfc29ed94473f5a4364304d9b5fd3ac4354ec5cc958ab70",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_openstack.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_openstack",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_opnsense": {
+      "displayName": "OPNsense Server",
+      "scriptSha256": "9a49c1705c5d604bc2eab0d2357c0da5b821be0c791326fa5a59705fb89626f5",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_opnsense.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_opnsense",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_opusdns": {
+      "displayName": "OpusDNS.com",
+      "scriptSha256": "47c0cf5a4e76bee3d900116788df761529d431c35d779a6787e25dbfe347fa84",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_opusdns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_opusdns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ovh": {
+      "displayName": "OVH.com",
+      "scriptSha256": "a2a628f88d541672da673cf4b3cc2ffedc1b95585044bbff1ecc1171e778d2a6",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ovh.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/How-to-use-OVH-domain-api",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_pdns": {
+      "displayName": "PowerDNS Server API",
+      "scriptSha256": "61034cef997b022d57cd947ad23ca2856cfc7188616a4428f66035bbd973cced",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_pdns.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_pdns",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_pleskxml": {
+      "displayName": "Plesk Server API",
+      "scriptSha256": "96791c080afddf80717eb46fa9c59ab01bd710cf331841d304e0f497dca69cf8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_pleskxml.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_pleskxml",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_pointhq": {
+      "displayName": "pointhq.com PointDNS",
+      "scriptSha256": "3b4ae44974e0368e283c2701c277b54d9c14b0e554322c82a59daa1351548378",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_pointhq.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_pointhq",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_porkbun": {
+      "displayName": "Porkbun.com",
+      "scriptSha256": "f3f538e3ee70d1faf1922af3df038f2d0f8e027e366aceebf8e89ac7a49347ca",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_porkbun.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_porkbun",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_poweradmin": {
+      "displayName": "Poweradmin API",
+      "scriptSha256": "47b8f8a7f4945d88c2bf45cdfad9df0ec52ede4a75c7f15df8f0a0f9fc6faab4",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_poweradmin.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_poweradmin",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_qc": {
+      "displayName": "QUIC.cloud",
+      "scriptSha256": "7dcf8df129120e2098a98f7627c024561bbb0669510312358f6752e6ba5413a8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_qc.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_qc",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_rackcorp": {
+      "displayName": "RackCorp.com",
+      "scriptSha256": "3a5eb0e9e3c438e973a2b16c4904b75a5a018f4bd5c4b5e9e0cae0cffa4fa5d0",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_rackcorp.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_rackcorp",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_rackspace": {
+      "displayName": "RackSpace.com",
+      "scriptSha256": "6815e2440de4ea2f772fde6793fab5362a53b05a0e0bc024f1ce178aa0e63d2e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_rackspace.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_rackspace",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_rage4": {
+      "displayName": "rage4.com",
+      "scriptSha256": "ea70090b998ac43aa3d4c89db432053bb1a5304f4ca056613ffda5ce7786a7b6",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_rage4.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_rage4",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_rcode0": {
+      "displayName": "Rcode0 rcodezero.at",
+      "scriptSha256": "6751c0b7073dfd9de35b1e5df64d448774d7569dcfac57083ce701f911cb9ac8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_rcode0.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_rcode0",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_regru": {
+      "displayName": "reg.ru",
+      "scriptSha256": "cef1456b387c861070681798aa2f95ae77235fb829aa282b6da39fb1b6a4a735",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_regru.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_regru",
+      "formCoverage": "reviewed",
+      "accountTested": false,
+      "fields": [
+        {
+          "name": "REGRU_API_Username",
+          "required": true,
+          "secret": true,
+          "type": "password",
+          "maxLength": 1024,
+          "labelKey": "provider.regru.username.label",
+          "helpKey": "provider.regru.username.help"
+        },
+        {
+          "name": "REGRU_API_Password",
+          "required": true,
+          "secret": true,
+          "type": "password",
+          "maxLength": 1024,
+          "labelKey": "provider.regru.password.label",
+          "helpKey": "provider.regru.password.help"
+        }
+      ],
+      "credentialsUrl": "https://www.reg.ru/user/account/#/settings/api/",
+      "helpKey": "provider.regru.help"
+    },
+    "dns_scaleway": {
+      "displayName": "ScaleWay.com",
+      "scriptSha256": "24762aaef592001b57b3a99f0a3c0a873ee5b5ad8838319602fad49b27511ef6",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_scaleway.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_scaleway",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_schlundtech": {
+      "displayName": "SchlundTech.de",
+      "scriptSha256": "8deab2d59fe1ed3ccb406fce26029a3540ce53e914b864f3c11f27d8776d05ce",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_schlundtech.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_schlundtech",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_selectel": {
+      "displayName": "Selectel.com",
+      "scriptSha256": "710fcb321c9030fca91e4412f07564ef6d0edf426d10cd7ec9b5e5485556591a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_selectel.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_selectel",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_selfhost": {
+      "displayName": "SelfHost.de",
+      "scriptSha256": "708999e9efc52eb72d2de43c421e3ae8af67ec05db9b7965360d04c2df173d51",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_selfhost.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_selfhost",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_servercow": {
+      "displayName": "ServerCow.de",
+      "scriptSha256": "0f7ece7349c7a4f62dda42d28d56de2d1331d5c55556a171a59bde2bff0f464d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_servercow.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_servercow",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_simply": {
+      "displayName": "Simply.com",
+      "scriptSha256": "27e719fc987810af7b65cc9a1a0d908df037ceabb4c55256dbc95cfe785cc241",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_simply.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_simply",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_sitehost": {
+      "displayName": "SiteHost",
+      "scriptSha256": "cee749583d2e23874bf57604aa97760bfd80ec99a0394eef3fe4ab75ca821145",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_sitehost.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_sitehost",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_sotoon": {
+      "displayName": "Sotoon.ir",
+      "scriptSha256": "b7e444fdb53f4f6d0f46e341a9579d21ad27cc19b7c22d4238916512baff7e8a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_sotoon.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_sotoon",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_spaceship": {
+      "displayName": "Spaceship.com",
+      "scriptSha256": "522ea1de61415bca41ada79e48b912ca97a546ac729bf0ea29663c1cc0e994d8",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_spaceship.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_spaceship",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_subreg": {
+      "displayName": "Subreg.cz",
+      "scriptSha256": "10eeef3cd3822edf5398a5b99b790075beb8c841d0665df806f7a670a38cfe80",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_subreg.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_subreg",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_technitium": {
+      "displayName": "Technitium DNS Server",
+      "scriptSha256": "6e6b4700da4c3b0afb7d459fdbe6bc612add23683117a83082084019d13a2c3a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_technitium.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_technitium",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_tele3": {
+      "displayName": "tele3.cz",
+      "scriptSha256": "db245951f908e1817daf1a282f5d69a264d865098228ba4c48693e28b8c5cb0c",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_tele3.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#tele3",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_tencent": {
+      "displayName": "Tencent.com",
+      "scriptSha256": "bedbc48380d54e28d929c271495533beb77e254a50fefc258565246641163159",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_tencent.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_tencent",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_timeweb": {
+      "displayName": "Timeweb.Cloud",
+      "scriptSha256": "15a8695b5d38ae8136866182c1b022b7589c5395056d219a26258b27f58e93ea",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_timeweb.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_timeweb",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_transip": {
+      "displayName": "TransIP.nl",
+      "scriptSha256": "570be35a29ce2ccd306e06a13a9de2f201fdea6e65fd86df193a29ee672a1b0a",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_transip.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_transip",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_udr": {
+      "displayName": "united-domains Reselling",
+      "scriptSha256": "c5ffdeb95e365da899404887553eb74ed404d62f827065a9174b75212f628f60",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_udr.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_udr",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_ultra": {
+      "displayName": "UltraDNS.com",
+      "scriptSha256": "9cf5c6477a3c3bd19849943e84ac10157f914c2c28488caada73d6c6b8022b55",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_ultra.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_ultra",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_unoeuro": {
+      "displayName": "unoeuro.com",
+      "scriptSha256": "0699cc97358f1b444d34e6d6741241f3193ce4620241e536511ca6179ae4a8fa",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_unoeuro.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_unoeuro",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_variomedia": {
+      "displayName": "variomedia.de",
+      "scriptSha256": "1a99a0cf171f556c89b5f552cfa7ccd7dc165c994bd3f04a0e5f6922773aed2d",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_variomedia.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_variomedia",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_veesp": {
+      "displayName": "veesp.com",
+      "scriptSha256": "d80edf8ad896124a863b406a88c28024122709f39e13862c2faebb21114b822e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_veesp.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_veesp",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_vercel": {
+      "displayName": "Vercel.com",
+      "scriptSha256": "cec381f3e84a13c6414647337ae810e833d638a54fdc4442888936b035152b93",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_vercel.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_vercel",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_virakcloud": {
+      "displayName": "VirakCloud DNS API",
+      "scriptSha256": "15ad2758f6d790444def451cc8ef78e96d9159363bc336af4c75c1879c6f097e",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_virakcloud.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_virakcloud",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_volcengine": {
+      "displayName": "Volcano Engine DNS API",
+      "scriptSha256": "7afa569f537665b60b904b9fc04b1b819f1008921997615ab4ca1bb90359c8ee",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_volcengine.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_volcengine",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_vscale": {
+      "displayName": "vscale.io",
+      "scriptSha256": "6696338d3531ce71ce55a097173542c2dd91cd08125bc72bd4dcebb54365907b",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_vscale.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_vscale",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_vultr": {
+      "displayName": "vultr.com",
+      "scriptSha256": "7e62c1e13df02a931e1943258aa564688814d0ba4bdffb25a977fa9fb28b15cf",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_vultr.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_vultr",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_websupport": {
+      "displayName": "Websupport.sk",
+      "scriptSha256": "7a1573eee43994a425d05c4689eb83e67804cc77f860aa72c3313f9f2f815f5f",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_websupport.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_websupport",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_wedos": {
+      "displayName": "WEDOS.com",
+      "scriptSha256": "e059946b4aaf0d250606c190579d58bc4b44fb6d4e8a0c100b438127179067ba",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_wedos.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_wedos",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_west_cn": {
+      "displayName": "West.cn",
+      "scriptSha256": "2171d734ff69bbb6bd6283846a4af4257efc762106dea37138f3d25a283b2bbd",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_west_cn.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_west_cn",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_world4you": {
+      "displayName": "World4You.com",
+      "scriptSha256": "a6030016d8155cfdd2e8f9f83c058accc0637e1fc76fc97a0c0bb8aed0d5efa9",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_world4you.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_world4you",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_yandex360": {
+      "displayName": "Yandex 360 for Business DNS API.",
+      "scriptSha256": "7ac95c108e89f206bd91a68bd62612ba83b9eeb74e9523d6343810e90a9e58ef",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_yandex360.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_yandex360",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_yc": {
+      "displayName": "Yandex Cloud DNS",
+      "scriptSha256": "db42e276d0eb325cb8ec6cbde657bf7addbd46121de3fb628b65da1cddd026c9",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_yc.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_yc",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_zilore": {
+      "displayName": "Zilore.com",
+      "scriptSha256": "37897bb31c46d1d2cbca2b634c5c5424aa2b264d15af899181ea8c4ab4584435",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_zilore.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_zilore",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_zone": {
+      "displayName": "Zone.eu",
+      "scriptSha256": "933f38bc35ada54d24e869c26ecb2a7e54d7a2ec44f9edafd559a75ca15366f0",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_zone.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_zone",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_zoneedit": {
+      "displayName": "ZoneEdit.com",
+      "scriptSha256": "b1429f87ebff34a7059897439af53bd93ada5b5cdf70a58c3fe6641ef7d47488",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_zoneedit.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_zoneedit",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    },
+    "dns_zonomi": {
+      "displayName": "zonomi.com",
+      "scriptSha256": "844323987b18476a681f7d4cfda16617bb9d5fd932eaafd579426e235138abc2",
+      "sourceUrl": "https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/dnsapi/dns_zonomi.sh",
+      "documentationUrl": "https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_zonomi",
+      "formCoverage": "unreviewed",
+      "accountTested": false,
+      "fields": []
+    }
+  }
+}
