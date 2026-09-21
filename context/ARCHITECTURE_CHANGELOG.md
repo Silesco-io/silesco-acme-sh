@@ -2,6 +2,13 @@
 
 Версия архитектуры не является версией продукта, Agent protocol, SAM API или отдельного компонента. Она версионирует только согласованный документальный baseline и использует Semantic Versioning 2.0.0.
 
+## 1.23.0 — 2026-09-21
+
+- ADR-091 / BASE-073: целевой Wizard перенесён с Go ELF на непривилегированный PHP/Yii3 container bootstrap profile, использующий общие с панелью runtime/модули и Nginx ingress, без зависимости от готовых PostgreSQL/Vault.
+- install.sh спрашивает базовый домен, проверяет пригодность wildcard/install address, иначе оставляет IP-вход; сертификаты LE выпускаются только из Wizard, не shell installer.
+- Новый модуль 24 задаёт границы runtime, silesco-acme-sh, этапы перехода и проверяемые acceptance gates. silesco-acme остаётся контейнером upstream acme.sh; DNS API не переписываются.
+- Потребители: Installer, Wizard, UI, Nginx, ACME, ACME-sh, Protocol и Release. Новый snapshot не означает готовый runtime или разрешение production promotion. ADR-088/089 и действующая защита перехода origin не отменены.
+
 ## 1.22.1 — 2026-09-19
 
 - Уточнение ADR-090/BASE-072, явно принятое владельцем: только source HTML

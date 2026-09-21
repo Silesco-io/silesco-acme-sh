@@ -1,8 +1,8 @@
 {
   "schema": "io.silesco.architecture.generated-snapshot/v1",
   "schemaVersion": 1,
-  "architectureVersion": "1.22.1",
-  "snapshotDate": "2026-09-19",
+  "architectureVersion": "1.23.0",
+  "snapshotDate": "2026-09-21",
   "managedRoots": [
     "context",
     "spec"
@@ -12,15 +12,15 @@
   "files": [
     {
       "path": "context/ARCHITECTURE_BASELINE.md",
-      "sha256": "df30b3b982a559ca4604cf67c910aff8d6c1fd16504af01d21ce5125842987f7"
+      "sha256": "14f09811068c20c8bff394b4424a520693c27ee524a005366a5dad1f62784c22"
     },
     {
       "path": "context/ARCHITECTURE_CHANGELOG.md",
-      "sha256": "48a43d6462e34661670ca3e384fd2ae5ef85419862bb9a340936e58480763a8e"
+      "sha256": "37f050d07af16c4e944ff3cf791a1e5ad5d2b76e4df868564691d55998245c75"
     },
     {
       "path": "context/ARCHITECTURE_VERSION",
-      "sha256": "9ab1866f12256201a2850a9a9f874ec83f0de235ab93c2396fdac036493c5e81"
+      "sha256": "8fc21140add9202a29f2eec0793eaa9dcf4065a756d9d91775190096d44a62aa"
     },
     {
       "path": "context/SILESCO_CONTEXT.md",
@@ -28,7 +28,7 @@
     },
     {
       "path": "context/SUBPROJECT_WORKFLOW.md",
-      "sha256": "561fad50b2431af0c3d7b355ef95f7bcc8f5451c39f48d4e712ec84d673655a5"
+      "sha256": "0eeeb35d40f83f5b5b8ed1de12cae54e8a152879d7b274ad4494b45d07b7aab2"
     },
     {
       "path": "spec/01_security_vault.md",
@@ -36,7 +36,7 @@
     },
     {
       "path": "spec/02_master_node.md",
-      "sha256": "16e14f14aa94f0676d31b9f889aed45eff055754c59ed6afb340e6318977b901"
+      "sha256": "77ebd2bbd3727134685179e7e3ebadf0e555d37cee4b65027421b66ecb3b518a"
     },
     {
       "path": "spec/04_network_peers.md",
@@ -44,11 +44,7 @@
     },
     {
       "path": "spec/06_flows_and_updates.md",
-      "sha256": "5d46508c4b55d6c7b87df536ee88eac94510b86209f0857d8a2d8522ff30f868"
-    },
-    {
-      "path": "spec/09_sam_manifest.md",
-      "sha256": "20a83e833affb5fc8d4cb4211e64cf146e0ee4c9da0a4d9617f7bfab22cab8f0"
+      "sha256": "8544a1032e622827b3335980ba18e20be3a106ee9f5af4c05b635cf70cbb4847"
     },
     {
       "path": "spec/13_licensing_and_contributions.md",
@@ -56,7 +52,7 @@
     },
     {
       "path": "spec/16_filesystem_layout.md",
-      "sha256": "377caa44115c9eb8999a268882deeb91f8457e47fe2606dd6f09072273476c4f"
+      "sha256": "9642eeaad989de02b42d550103aa80b7b73d04200fe97a83d911aaacb2ae11f5"
     },
     {
       "path": "spec/18_port_registry.md",
@@ -73,6 +69,10 @@
     {
       "path": "spec/23_release_channels_and_telemetry.md",
       "sha256": "cd157728a05cdde0f73a8ed1d24ca33374ff160a91b6bf43b29c9f147398cafb"
+    },
+    {
+      "path": "spec/24_wizard_yii_bootstrap.md",
+      "sha256": "45fd9aed2715c5a605f348b32ee22c2a1dc70e80373b55fb418def92ccbc0b87"
     }
   ]
 }

@@ -43,6 +43,11 @@ spec/
 
 ## 3. Какие спецификации класть в `spec/`
 
+С baseline 1.23.0 Installer, Wizard, UI, Nginx, ACME, ACME-sh, Protocol и
+Release дополнительно получают `24_wizard_yii_bootstrap.md` (ADR-091).
+`silesco-acme-sh` использует набор ACME плюс licensing/docs/localization;
+пакет не является новым ACME/DNS API клиентом.
+
 | Субпроект | Обязательные тематические файлы |
 |---|---|
 | `silesco-agent-core` | `03_go_agents_standards.md`, `03_01_agent_core.md`, `04_network_peers.md`, `05_data_schema.md`, `11_docker_observability.md`, `22_postgresql_contract.md` |

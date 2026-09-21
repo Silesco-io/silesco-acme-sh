@@ -1,9 +1,26 @@
 # Актуальная архитектурная база Silesco.io
 
-**Architecture baseline:** 1.22.1
-**Snapshot date:** 2026-09-19
+**Architecture baseline:** 1.23.0
+**Snapshot date:** 2026-09-21
 
 Этот файл фиксирует глобальные решения архитектуры. Это не версия продукта или компонента. При расхождении он имеет приоритет над старыми схемами и примерами; точная дельта версий находится в `context/ARCHITECTURE_CHANGELOG.md`.
+
+## BASE-073: Yii3 Wizard использует общий с панелью runtime и модули
+
+ADR-091 заменяет Go web-бинарник Wizard контейнерным PHP/Yii3 bootstrap profile.
+Nginx используется при установке и работе панели; bootstrap не зависит от
+готовых PostgreSQL/Vault и не запускает все UI workers. PHP не получает Docker
+socket/root/sudo, root apply сохраняет journal и мутации. Общие библиотеки не
+копируются между Wizard и UI; silesco-acme-sh предоставляет независимую PHP
+обвязку и полный каталог DNS-провайдеров закреплённого upstream acme.sh.
+acme.sh выполняет DNS API, silesco-acme сохраняет контейнер/runtime-обвязку.
+
+install.sh спрашивает базовый домен, выбирает install.<domain> при пригодном
+wildcard либо IP, устанавливает свои dependencies и НЕ выпускает LE certificate.
+Первоначальный HTTPS self-signed; выбор панели и помощь HTTP-01/DNS-01 — Wizard.
+После configured временные routes/container/state удаляются, общие PHP-модули
+остаются. TLS/PWA/KMS/secret boundaries не ослабляются. Полный контракт и
+последовательность закрытых этапов — модуль24. Новый snapshot не равен runtime.
 
 ## BASE-072: Wizard переносит browser session на canonical origin
 
@@ -160,7 +177,7 @@ Runtime/UI/installer — PolyForm Shield 1.0.0; SAM schema/protocol/public SDK �
 
 ## BASE-024: Язык определяется типом компонента
 
-Observer, Guard, Unseal Controller и root helpers используют Rust по профилю риска. Core, Collector и scheduler над restic используют Go; одновременно наступившие backup jobs могут выполняться параллельно с bounded resource policy и учётом restic locks. UI, Notifier worker, baseline publication worker, hosted Store и оболочка KMS используют PHP 8.3/Yii3. PWA использует TypeScript. Wizard — временный непривилегированный Go web-бинарник со встроенным TypeScript frontend. Shell-only installer передаёт workflow временным systemd wizard/path/apply/timer units, возвращает SSH prompt и сохраняет root journal/мутации за apply oneshot. После commit root cleanup удаляет bootstrap-контур. SAM parser/compiler — отдельная Rust CLI/library. Protocol — schema-first с bindings для нужных языков. Универсального правила `Rust preferred` для всех каталогов нет.
+Observer, Guard, Unseal Controller и root helpers используют Rust по профилю риска. Core, Collector и scheduler над restic используют Go; одновременно наступившие backup jobs могут выполняться параллельно с bounded resource policy и учётом restic locks. UI, Notifier worker, baseline publication worker, hosted Store и оболочка KMS используют PHP 8.3/Yii3. PWA использует TypeScript. Wizard — временный непривилегированный PHP/Yii3 container bootstrap profile с общими модулями панели, без startup dependency на PostgreSQL/Vault (ADR-091). Shell-only installer передаёт workflow временным systemd wizard/path/apply/timer units, возвращает SSH prompt и сохраняет root journal/мутации за apply oneshot. После commit root cleanup удаляет bootstrap-контур. SAM parser/compiler — отдельная Rust CLI/library. Protocol — schema-first с bindings для нужных языков. Универсального правила `Rust preferred` для всех каталогов нет.
 
 ## BASE-025: Готовые инфраструктурные продукты не переписываются
 

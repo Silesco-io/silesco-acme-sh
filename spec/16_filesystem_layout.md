@@ -9,6 +9,13 @@
 
 ## 1. Назначение и стандарт
 
+ADR-091: Yii3 Wizard использует существующие scoped Wizard state/socket paths
+через exact bind mounts, не новые общие host roots. Container numeric UID/GID
+должны соответствовать dedicated Wizard identity; root journal/private paths
+не становятся writable. PHP код и dependencies входят в pinned image, а не
+в host Go executable. После configured удаляются временный container и
+bootstrap state, но не общий PHP image/UI libraries. Подробности — модуль24.
+
 ADR-087 дополнительно резервирует:
 
 - `/opt/silesco.io/components/silesco-kms-adapter/versions/<version>/` — root-owned

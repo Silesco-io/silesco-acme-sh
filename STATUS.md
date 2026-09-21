@@ -1,5 +1,12 @@
 # Текущее состояние
 
+## Received architecture 1.23.0 — 2026-09-21
+
+ADR-091 / spec/24_wizard_yii_bootstrap.md is the current migration target.
+See [snapshot receipt](docs/architecture-1.23.0-receipt.md). This is not an
+implementation-complete claim; older applied-version entries remain historical.
+Next shared gate: Installer/Nginx/Yii3 startup without PostgreSQL/Vault.
+
 Дата: 2026-09-21. Этап: scaffold, реализации нет.
 Architecture baseline: 1.22.1 (snapshot 2026-09-19).
 Documentation profile: PHP integration guides + generated API reference (план).
