@@ -1,0 +1,78 @@
+{
+  "schema": "io.silesco.architecture.generated-snapshot/v1",
+  "schemaVersion": 1,
+  "architectureVersion": "1.22.1",
+  "snapshotDate": "2026-09-19",
+  "managedRoots": [
+    "context",
+    "spec"
+  ],
+  "manifestPath": "context/GENERATED_SNAPSHOT_MANIFEST.json",
+  "pruneRule": "delete-tracked-managed-files-absent-from-this-manifest",
+  "files": [
+    {
+      "path": "context/ARCHITECTURE_BASELINE.md",
+      "sha256": "df30b3b982a559ca4604cf67c910aff8d6c1fd16504af01d21ce5125842987f7"
+    },
+    {
+      "path": "context/ARCHITECTURE_CHANGELOG.md",
+      "sha256": "48a43d6462e34661670ca3e384fd2ae5ef85419862bb9a340936e58480763a8e"
+    },
+    {
+      "path": "context/ARCHITECTURE_VERSION",
+      "sha256": "9ab1866f12256201a2850a9a9f874ec83f0de235ab93c2396fdac036493c5e81"
+    },
+    {
+      "path": "context/SILESCO_CONTEXT.md",
+      "sha256": "2e93fff4a66512562302e13cb49d5e3d64e7ddbd71cca525cb89da4da8ae26e5"
+    },
+    {
+      "path": "context/SUBPROJECT_WORKFLOW.md",
+      "sha256": "561fad50b2431af0c3d7b355ef95f7bcc8f5451c39f48d4e712ec84d673655a5"
+    },
+    {
+      "path": "spec/01_security_vault.md",
+      "sha256": "3e84f640ecd176809c9ea2a51d5a3d883fcb3bd4115ed243bd5d4da66dcf9037"
+    },
+    {
+      "path": "spec/02_master_node.md",
+      "sha256": "16e14f14aa94f0676d31b9f889aed45eff055754c59ed6afb340e6318977b901"
+    },
+    {
+      "path": "spec/04_network_peers.md",
+      "sha256": "59d41eab53d2587874a965c6bcf6f4d0f6184854c20d75ae57b17819066974dc"
+    },
+    {
+      "path": "spec/06_flows_and_updates.md",
+      "sha256": "5d46508c4b55d6c7b87df536ee88eac94510b86209f0857d8a2d8522ff30f868"
+    },
+    {
+      "path": "spec/09_sam_manifest.md",
+      "sha256": "20a83e833affb5fc8d4cb4211e64cf146e0ee4c9da0a4d9617f7bfab22cab8f0"
+    },
+    {
+      "path": "spec/13_licensing_and_contributions.md",
+      "sha256": "7632c13af73d650a0f97f621139f3d526f749261f2772e3de32e07dc9d3d4570"
+    },
+    {
+      "path": "spec/16_filesystem_layout.md",
+      "sha256": "377caa44115c9eb8999a268882deeb91f8457e47fe2606dd6f09072273476c4f"
+    },
+    {
+      "path": "spec/18_port_registry.md",
+      "sha256": "b5f235db51f50a1bc36d548a10d856d609bf1f56d913db687643695807e7fc17"
+    },
+    {
+      "path": "spec/19_documentation.md",
+      "sha256": "5da3974fd3897ac790225e41509843681c9ae12fbd776fe42f12edcf3302ba00"
+    },
+    {
+      "path": "spec/21_localization.md",
+      "sha256": "9731425ae8c88a8832583824bab58e8f58feb72d8f30d39fe951cf6e8c3c60ce"
+    },
+    {
+      "path": "spec/23_release_channels_and_telemetry.md",
+      "sha256": "cd157728a05cdde0f73a8ed1d24ca33374ff160a91b6bf43b29c9f147398cafb"
+    }
+  ]
+}
