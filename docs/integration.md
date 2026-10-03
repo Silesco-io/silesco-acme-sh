@@ -5,6 +5,13 @@ Composer library as a path/VCS package; it is not yet published to Packagist.
 The closed offline export includes VERSION, UPSTREAM.json and SHA256SUMS.
 No floating runtime download, Yii dependency or bundled acme.sh source.
 
+Start with the [runnable Composer quick start](../README.md#quick-start--быстрый-старт).
+It installs the current development branch and reads the catalog without secrets
+or network access. The following example shows the issuance integration boundary,
+not a complete runnable application: `$submittedValues` come from your form,
+`$protectedHandle` refers to your protected credential storage, `$uuid` is a fresh
+operation UUID, and `$executor` is your configured implementation of `Executor`.
+
 ```php
 use Silesco\AcmeSh\{Catalog, CertificateRequest};
 $catalog = Catalog::bundled();
