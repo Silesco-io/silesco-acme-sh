@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/acmesh-official/acme.sh",
+  "release": "3.1.6",
+  "tag": "3.1.6",
+  "commit": "807da6498377ee5e0cf43a78091f46f12dc59a89",
+  "tagObject": "c6e7807f8e2573bf8b02b71da186b4022afafa56",
+  "acmeScriptSha256": "c7d68b021cfd6380ea83a82962abde5b484779fee0b97d38681dfa1396bbc8d7",
+  "sourceArchiveSha256": "9aacfd809a6c55b75d26a7239b417ae9cdd3cb002eebfab890fb0fcc0117fa36",
+  "archiveFormat": "git -c core.autocrlf=false archive --format=tar 3.1.6",
+  "signingKeyFingerprint": "SHA256:M60qVafm/NUywQHXAkoQcj2v6KgkfrdSXv6mPejUUeE",
+  "allowedSignersSha256": "8522e614de31e4e36d1c11e45d90721013b37f91bc3d9aa437fe1844d83400fa",
+  "verifiedAt": "2026-10-03",
+  "dnsDriverCount": 198,
+  "dnsInventorySha256": "7836093bbe60e911d0dedecb06b178b02e5551bbcd89c8da0c51f92c01a157bc"
+}

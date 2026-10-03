@@ -1,15 +1,15 @@
 # Third-party provenance
 
-This package does not redistribute or execute acme.sh shell source. Provider IDs,
-display names, documentation links and file digests are factual catalog metadata
-derived from acmesh-official/acme.sh 3.1.4, commit
-`3661fd86b6304115e42f43910e6dd452ab9866d6`.
+This Composer package does not redistribute upstream acme.sh shell source.
+Its optional local executor uses a separately provisioned, exact reviewed upstream tree.
+Driver IDs, field names, factual configuration metadata, links and hashes are derived from
+acmesh-official/acme.sh3.1.6, commit `807da6498377ee5e0cf43a78091f46f12dc59a89`.
+Complete provenance is in UPSTREAM.json; review corrections in resources/provider-overrides.json.
+User guidance is independently worded, not a copy of upstream shell prose.
 
-Upstream acme.sh is GPL-3.0: https://github.com/acmesh-official/acme.sh/blob/3661fd86b6304115e42f43910e6dd452ab9866d6/LICENSE.md
-The separately shipped runtime remains under its upstream license. This package's
-original PHP and tooling are Apache-2.0; hand-written documentation is CC BY 4.0.
-Brand names identify providers and confer no trademark rights or affiliation.
-
-REG.RU field guidance was independently written after reviewing the pinned driver
-and https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_regru . No upstream
-instructions or raw provider responses are copied into the package.
+Upstream acme.sh remains GPL-3.0:
+https://github.com/acmesh-official/acme.sh/blob/807da6498377ee5e0cf43a78091f46f12dc59a89/LICENSE.md
+Distribution of that separate runtime must preserve its license and source obligations.
+Original PHP/tooling here is Apache-2.0; project-authored documentation is CC BY4.0.
+Keep LICENSE and these notices with redistributed packages. Brand names identify providers;
+no affiliation or trademark rights are implied. This notice is not a legal compatibility guarantee.

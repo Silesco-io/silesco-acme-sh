@@ -5,5 +5,10 @@
   "license": "Apache-2.0",
   "require": {"php": "^8.3", "ext-json": "*"},
   "autoload": {"psr-4": {"Silesco\\AcmeSh\\": "src/"}},
-  "scripts": {"test": "php tests/run.php", "docs": "php scripts/reference.php"}
+  "suggest": {
+    "ext-openssl": "Certificate verification for the optional standalone Linux executor",
+    "ext-posix": "Filesystem ownership and process groups for the optional standalone Linux executor"
+  },
+  "extra": {"acme-sh-upstream-provenance": "UPSTREAM.json"},
+  "scripts": {"test": "php tests/run.php", "docs": "php scripts/reference.php", "upstream-check": "node scripts/check-upstream.mjs"}
 }

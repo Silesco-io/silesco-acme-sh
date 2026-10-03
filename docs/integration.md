@@ -1,70 +1,66 @@
-# PHP ACME integration (0.1.0-alpha.1)
+# PHP integration — 0.2.0-alpha.1
 
-PHP 8.3+, no framework, database, Vault or network dependency. This is a public SDK
-(Apache-2.0), not an ACME protocol implementation. Install as a Composer path package
-or export the closed package using `node scripts/export.mjs EMPTY_OUTPUT_DIRECTORY`.
-Composer PSR-4 namespace is `Silesco\AcmeSh\` mapped to `src/`. Release assembly pins
-the exact commit and exported SHA256SUMS; no runtime download or floating version.
+PHP 8.3+, PSR-4 `Silesco\AcmeSh\` → `src/`, no framework or database. Install this
+Composer library as a path/VCS package; it is not yet published to Packagist.
+The closed offline export includes VERSION, UPSTREAM.json and SHA256SUMS.
+No floating runtime download, Yii dependency or bundled acme.sh source.
 
 ```php
-use Silesco\AcmeSh\{Catalog, CertificateRequest, Executor};
-$form = Catalog::bundled()->form('dns_regru', 'ru');
-$request = CertificateRequest::http01(['panel.example.test', 'install.example.test'], $uuid);
-// $executor is an application-owned implementation of Executor.
+use Silesco\AcmeSh\{Catalog, CertificateRequest};
+$catalog = Catalog::bundled();
+$form = $catalog->form('dns_regru', 'ru');
+// Render escaped labels/help, never evaluate metadata. Do not log submitted values.
+$catalog->validateCredentials('dns_regru', $submittedValues, $form['variantId']);
+$request = CertificateRequest::dns01(['panel.example.test'], 'dns_regru', $protectedHandle, $uuid);
 $progress = $executor->submit($request)->assertFor($request);
 $progress = $executor->poll($progress->operationId)->assertFor($request);
 ```
 
-The supplied UUID identifies one immutable operation. A retry of the same request
-must recover the same operation, while reuse for different content fails. Polling
-never submits another issuance. Application policy chooses CA, account, validated
-CSR/private-key owner and runtime paths; the browser cannot select a shell command,
-CA endpoint, hook or file path. `binding()` is deterministic library-local JSON
-SHA-256, not RFC 8785 and not a Protocol/Execution Permit signature payload.
+`$executor` is application-owned. The optional [standalone Linux implementation](local-executor.md)
+can be selected explicitly. **Silesco does not run it in its web process**: Wizard uses
+the existing typed bootstrap/Guard/helper adapter. This library grants no mutation authority.
 
-Executor states: queued, running, waiting_dns, issued, failed, expired. Public error
-codes are the closed `Operation::ERRORS` list. No raw stdout/stderr/provider bodies
-may populate a result. `issued` says nothing about Nginx activation, live TLS proof,
-browser trust or PWA readiness. The root owner separately verifies and activates TLS.
+## Forms and credential validation
 
-In Silesco the Wizard owns the adapter to the existing typed bootstrap intent and
-root result mechanism. This package cannot mutate host state or open Docker/sudo.
-Outside Silesco an application can implement Executor locally around its own trusted
-acme.sh runner. **No local process runner is shipped in this initial release**;
-command escaping, custody, timeout and state durability are not falsely delegated
-to an unsafe default. The interface is independently reusable now.
+198 providers, 218 variants, optional/default/conditional fields. `form(id, locale, variantId)`
+returns the selected fields plus all variants and prerequisites. Locale falls back to English.
+Known credential-creation URLs are included; otherwise use the official documentation link.
+All 50 source corrections and external tool requirements are in [provider review](provider-review.md).
 
-## DNS catalog coverage
+`validateCredentials` checks only shape and the declared variant: exact case-sensitive names,
+required fields, control characters, value lengths and mutually exclusive credentials.
+With no variant argument any declared variant may match; explicitly select one in forms.
+Defaults are suggestions, not silently injected values. Infrastructure context such as
+account 2FA or IAM roles is **not guessed** from credentials; the application/executor must
+validate those requirements and prerequisites. This is not an account-access test.
 
-All 191 `dns_*.sh` drivers from the pinned tree are inventoried with exact source URL
-and SHA-256. Only REG.RU's form is reviewed in this release. Other records explicitly
-have `formCoverage=unreviewed` and `form()` fails closed; no inferred credential forms
-or claim of full provider enablement. No real provider account was tested here.
+REG.RU requires `REGRU_API_Username` and `REGRU_API_Password`. Configure the alternative
+API password and **executing server's outbound IP** in the linked REG.RU settings.
+acme.sh creates/removes TXT records itself. No PHP reimplementation of provider API.
 
-REG.RU requires `REGRU_API_Username` and `REGRU_API_Password`. Both are handled as
-sensitive. Configure an API alternative password and the **executing server's public
-outbound IP** at https://www.reg.ru/user/account/#/settings/api/ . The library checks
-field shape only, not account validity. Do not log the submitted form. DNS request
-objects carry only an opaque credential reference; an executor resolves that handle
-through its separate protected credential transport. Reference binding alone gives
-no authorization. Unknown fields, control characters and overlong values fail closed.
+## Operations and security
 
-Upstream acme.sh can persist credentials to account.conf and print sensitive provider
-responses, especially in debug mode. Executors must isolate protected account state,
-disable debug output and sanitize logs. This library does not claim to solve credential
-custody. All HTML consumers must escape catalog text and never execute metadata.
+An immutable request holds domains, provider and opaque credential reference, never secrets,
+CA endpoints, shell commands, paths or hooks. UUID identifies one operation. Reusing it with
+different content must fail; polling must not issue again. `binding()` is deterministic
+library-local JSON SHA-256, **not RFC8785 or a Protocol/Execution Permit signature payload**.
 
-## Reproducible checks
+States: queued, running, waiting_dns, issued, failed, expired. Errors use the closed
+Operation::ERRORS list, never raw stdout/stderr or provider responses. `issued` does not
+prove Nginx activation, browser trust or PWA readiness. The owning application proves those.
+Current request model is issuance; automatic renewal is not implemented by this release.
+
+acme.sh may persist credentials in account.conf and some providers print secrets even without
+debug. Executors must protect state and suppress all output sinks, not merely disable debug.
+The local executor documents this explicitly; see [its guide](local-executor.md).
+
+## Compatibility and checks
+
+Architecture 1.24.0 / ADR-091—092. PHP API 0.2.0-alpha.1; catalog schema2 replaces schema1
+before stable1.0. CertificateRequest/Executor/Operation signatures remain compatible with0.1.
+Consumers reading raw catalog JSON must migrate to schema2; source-image pins must be updated.
 
 `php tests/run.php`; `php scripts/reference.php --check`;
-`node scripts/catalog.mjs PINNED_SOURCE_DIRECTORY --check`.
-Acquire upstream only from the exact commit, verify source archive SHA-256
-`9af3ad3d775a5782246df4cdd4b4e7b9b3179deb63c509b10e3ba0433093a884`.
-Source is parsed as text and never executed. Generated reference is produced from
-PHPDoc with reflection, compatible with phpDocumentor comment input; no hosted docs
-generator is introduced. Catalog ru/en parity and hostile inputs are tested offline.
-
-Architecture: 1.23.0 / ADR-091. PHP API 0.1.0-alpha.1, acme.sh 3.1.4, catalog schema1.
-No earlier implemented API exists; this is the initial alpha contract. The live
-LE-staging and DNS credential tests belong to the installed cross-project flow and
-are not established by this package's offline tests.
+`node scripts/catalog-test.mjs PINNED_SOURCE_DIRECTORY`.
+Exact source acquisition and update policy: [maintenance](maintenance.md).
+Offline tests do not establish real LE staging or 198 live provider accounts.

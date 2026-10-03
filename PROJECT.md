@@ -1,61 +1,41 @@
-# silesco-acme-sh
+# Назначение и границы silesco-acme-sh
 
-## Applied implementation baseline
+Публичный Composer-пакет `silesco-io/acme-sh` под Apache-2.0, без Yii3, PostgreSQL,
+Vault, PWA, Guard и Silesco Protocol. Origin: `git@github.com:Silesco-io/silesco-acme-sh.git`.
+Принятая архитектура: 1.24.0 / ADR-091—092, snapshot и receipt находятся в context/spec и docs.
 
-Architecture 1.23.0 (ADR-091); public PHP SDK0.1.0-alpha.1 under Apache-2.0.
-Inputs: canonical domain list, idempotency UUID, pinned provider ID and opaque
-credential reference. Outputs: typed immutable intent and sanitized progress.
-No default filesystem writes, listeners, network, process execution or secret
-storage. Catalog ships as immutable package resources; build tools write only
-explicit output paths. Compatibility and actual coverage: docs/integration.md.
-The older pending-sync/scaffold statements below describe historical preparation,
-not the current snapshot. Full provider forms and local executor remain backlog.
+## Реализовано в 0.2.0-alpha.1
 
-## Назначение
+Каталог всех 198 DNS-драйверов acme.sh 3.1.6: поля, варианты авторизации,
+условные требования, подсказки ru/en, документация и известные ссылки настройки API.
+Для 50 исключений metadata отдельно сверены с кодом драйвера. Источник закреплён
+версией, commit, подписанным tag и SHA-256. Генератор читает Shell как текст, не исполняет его.
 
-Независимая PHP-библиотека над upstream acme.sh, переиспользуемая вне Yii3/Silesco. Планируемое Composer-имя: `silesco-io/acme-sh`. Origin: `git@github.com:Silesco-io/silesco-acme-sh.git`.
+Модели выпуска сертификата и безопасного результата, интерфейс исполнителя,
+необязательный локальный исполнитель для стороннего Linux-приложения. Последний
+получает полномочия только через явно заданную разработчиком политику; по умолчанию
+DNS-драйверы запрещены. Каталог и модели сами не открывают сеть и не запускают процессы.
 
-Пользователь выбирает DNS-провайдера, получает понятную форму настройки и наблюдает результат выпуска сертификата. Wizard и панель используют одинаковые программные блоки.
+## Разделение ответственности
 
-## Область ответственности
+- acme.sh выполняет протокол ACME, DNS API и создание/удаление TXT. Это не переписывается на PHP.
+- `silesco-acme` поставляет отдельный контейнер acme.sh и его runtime-обвязку.
+- Wizard и панель используют этот SDK через адаптер существующего bootstrap/Guard/helper пути.
+- Локальный исполнитель SDK не является разрешением дать веб-процессу Silesco shell, sudo или Docker socket.
+- Все приватные ключи и credentials остаются у исполнителя, в запросе — только opaque reference.
+- `issued` означает проверенный сертификат, не активацию Nginx, trusted origin или готовность PWA.
 
-- Каталог всех DNS-провайдеров закреплённой версии acme.sh: идентификаторы, обязательные/необязательные поля, варианты авторизации, секретные поля, проверки, ru/en подсказки, ссылки на документацию и получение credentials.
-- Источники — официальная документация и драйверы соответствующей версии. Не выдумывать поля. Полнота каталога не означает реальные испытания каждого провайдера.
-- Общие операции настройки, выпуска/продления и структурированного прогресса через сменяемого исполнителя.
-- Локальный исполнитель для сторонних PHP-проектов; интеграция Silesco через существующий путь типизированных разрешённых мутаций. Веб-процесс не получает произвольный shell, Docker socket или права изменения хоста.
-- DNS API, создание/удаление TXT и ACME-протокол выполняет acme.sh. Не реализовывать их заново.
-- `silesco-acme` остаётся отдельным проектом контейнера acme.sh и runtime-обвязки.
-- Общая библиотека не требует Vault, PostgreSQL, PWA, Guard или Silesco Protocol. Silesco-адаптер соблюдает их контракты; новый универсальный Go/Rust-агент не вводится.
+## Ещё не принято runtime-тестами
 
-## Данные, безопасность и отказы
+Реальные аккаунты 198 провайдеров не проверены. CLI/file-based драйверы требуют
+дополнительных инструментов и узкой политики хоста. В SDK нет обещания поддержать
+их из непривилегированного Wizard автоматически. Автоматическое продление,
+активация TLS, интеграция защищённой передачи DNS credentials и настоящий чистый
+VPS + LE staging остаются отдельными этапами. Текущий CertificateRequest описывает выдачу.
 
-Каталог — публичные версионируемые данные. Хранение credentials задаётся контрактом исполнителя, не новым хранилищем библиотеки. Credentials, ключи и чувствительные ответы не попадают в Git, примеры или логи. Core остаётся read-mostly, мутации идут через Guard/helpers и принятый bootstrap-путь.
+## Документация и обновления
 
-Нужны стабильные коды прогресса и ошибок, проверки результата, безопасные повторы, timeout, обработка недоступности исполнителя/провайдера/LE, ожидания DNS и очистки TXT. Точные retry/state/API контракты предстоит определить; не объявлять их реализованными.
-
-## Последнее решение владельца — требует глобальной синхронизации
-
-Wizard переходит на Yii3 и общие с панелью компоненты. install.sh спрашивает базовый домен и проверяет DNS: при подходящем wildcard Wizard доступен на install.<domain>, иначе по IP. install.sh НЕ выпускает сертификаты LE: первоначальный сертификат самоподписанный. Помощь с DNS и настройка HTTP-01/DNS-01 с наблюдением за результатом находятся в Wizard. PWA подключается после доверенного HTTPS. DNS wildcard не равен сертификату wildcard.
-
-Приложенный snapshot 1.22.1 ещё не содержит эти изменения. Сначала синхронизировать глобальную архитектуру; не продолжать старую концепцию Wizard вопреки принятому решению. Этот scaffold не меняет соседние проекты.
-
-## Источники
-
-- https://github.com/acmesh-official/acme.sh/wiki/dnsapi
-- https://github.com/acmesh-official/acme.sh/wiki/dnsapi2#dns_regru
-- https://www.reg.ru/user/account/#/settings/api/
-
-reg.ru — первый пользовательский сценарий, не ограничение каталога. Перед кодом закрепить upstream version/commit и проверить поля по нему.
-
-## Приёмка и документация
-
-- [ ] Синхронизирован глобальный baseline; определены PHP baseline, Composer API, SemVer и compatibility matrix.
-- [ ] Подтверждена лицензия публичной библиотеки по spec/13_licensing_and_contributions.md; лицензия кода пока не объявлена.
-- [ ] Каталог полон относительно закреплённого upstream; ru/en parity проверяется.
-- [ ] Сторонний проект работает без Yii3/Silesco; Silesco соблюдает путь мутаций.
-- [ ] Проверены прогресс, ошибки, повторы и отсутствие секретов в логах.
-- [ ] Для silesco-docs подготовлены интеграционные руководства, описание провайдеров/исполнителей, безопасность, troubleshooting и generated PHP API reference.
-
-## Snapshot
-
-Architecture baseline: 1.22.1, дата 2026-09-19. Штатный тематический snapshot silesco-acme скопирован без изменения context/spec. Точный перечень и SHA-256: context/GENERATED_SNAPSHOT_MANIFEST.json. Исходные имена модулей сохранены: 01_security_vault.md, 02_master_node.md, 04_network_peers.md, 06_flows_and_updates.md, 09_sam_manifest.md, 13_licensing_and_contributions.md, 16_filesystem_layout.md, 18_port_registry.md, 19_documentation.md, 21_localization.md, 23_release_channels_and_telemetry.md.
+Подробности API, локального исполнителя, проверки провайдеров и обновления upstream — в docs/.
+PHPDoc reference генерируется из кода. UPSTREAM.json и catalog schema2 входят в экспорт;
+сайт не является источником изменяемых runtime-форм. Новый upstream требует проверки,
+перегенерации и новой версии Composer-пакета, а не автоматической подмены Shell.

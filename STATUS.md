@@ -1,50 +1,31 @@
 # Текущее состояние
 
-## Received architecture 1.24.0 — 2026-10-03
+## PHP SDK 0.2.0-alpha.1 — 2026-10-03
 
-Source commit: `8cbde7d6`. See [receipt](docs/architecture-1.24.0-receipt.md).
-Public PHP SDK is independent of Yii/runtime execution. Provider catalog exists; DNS credential form and root integration require their own acceptance.
-This is receipt, not complete runtime conformance or hosted publication.
+Architecture snapshot 1.24.0, source commit `8cbde7d6`;
+[receipt](docs/architecture-1.24.0-receipt.md). Это не заявление о готовности всего runtime Silesco.
 
-## PHP SDK 0.1.0-alpha.1 — 2026-09-21
+Upstream acme.sh **3.1.6**, commit `807da6498377ee5e0cf43a78091f46f12dc59a89`;
+точная подпись/tag/source hashes — UPSTREAM.json. Каталог schema2: **198 драйверов,
+463 поля, 218 вариантов**, 50 явных исправлений metadata. Все формы доступны в ru/en.
 
-Applied architecture: 1.23.0 / ADR-091. Implemented framework-independent catalog,
-immutable CertificateRequest, Executor interface and bounded Operation results.
-Complete inventory: 191 pinned acme.sh3.1.4 drivers; reviewed form: REG.RU only;
-live provider accounts tested: zero. This is not full DNS-provider enablement.
-Offline tests, generated PHPDoc reference, ru/en parity and closed package export
-are provided. Wizard owns Silesco execution adapter; no shell or local runner here.
-Next gate: integrate real HTTP-01 executor and live LE-staging acceptance; protected
-DNS credentials transport and remaining form reviews stay explicitly incomplete.
-See docs/integration.md. Previous scaffold status below is historical.
+Реализованы immutable CertificateRequest, Executor, Operation; опциональный Linux
+LocalExecutor с policy, CredentialResolver, изолированным запуском, durable replay journal
+и проверкой SAN/key/validity/chain. По умолчанию пакет ничего не запускает.
 
-Verified:618 assertions on Linux PHP8.3 pinned FrankenPHP container with network
-disabled/read-only mount; same tests PHP8.5.3 host. Catalog offline reproduction:
-PASS191drivers. PHPDoc reference regeneration/check: PASS. Closed offline export:
-13package files plusSHA256SUMS. No LE request, realcredential or account mutation.
+Проверки и воспроизводимые команды: [stage report](docs/stage-0.2-report.md).
+Ни одной реальной учётной записи провайдера или выдачи LE в этом этапе не проверялось.
+Никаких изменений на VPS/get.silesco.io, production promotion или новых runtime-полномочий.
 
-## Received architecture 1.23.0 — 2026-09-21
+## Следующий этап
 
-ADR-091 / spec/24_wizard_yii_bootstrap.md is the current migration target.
-See [snapshot receipt](docs/architecture-1.23.0-receipt.md). This is not an
-implementation-complete claim; older applied-version entries remain historical.
-Next shared gate: Installer/Nginx/Yii3 startup without PostgreSQL/Vault.
+1. Включить SDK 0.2 в Yii3 Wizard и панель через существующий типизированный путь.
+2. Реализовать защищённый ввод DNS credentials и формы выбранного провайдера в Wizard.
+3. Проверить настоящий HTTP-01/DNS-01 на чистом VPS через LE staging.
+4. Отдельно реализовать автоматическое продление и TLS activation; не выдавать staged за ready.
 
-Дата: 2026-09-21. Этап: scaffold, реализации нет.
-Architecture baseline: 1.22.1 (snapshot 2026-09-19).
-Documentation profile: PHP integration guides + generated API reference (план).
-Localization profile: отдельные ru/en каталоги, stable machine codes.
+## История
 
-## Готово
-
-- Штатный шаблон с context/spec и manifest.
-- Назначение, границы и последние решения владельца в PROJECT.md.
-- Origin: Silesco-io/silesco-acme-sh. Push не выполнялся.
-
-## Следующий шаг после разрешения разработки
-
-Синхронизировать глобальную архитектуру с Yii3 Wizard и общей библиотекой acme.sh; затем определить PHP API и каталог провайдеров. Не переписывать Wizard в этом репозитории.
-
-## Проверки и ограничения
-
-При создании проверить SHA-256 snapshot. Runtime/Composer/CI тестов нет: код не реализован. Старый snapshot не включает последний сценарий установки — это известный разрыв, не готовность к интеграции.
+0.1.0-alpha.1 (2026-09-21): 191 драйвер acme.sh 3.1.4, форма только REG.RU,
+618 offline assertions; локального исполнителя не было. Этот scope заменён этапом 0.2,
+а не является текущим ограничением каталога. Архитектурные receipts 1.23/1.24 сохранены.

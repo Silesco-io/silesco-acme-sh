@@ -1,0 +1,190 @@
+{"providers": {
+  "dns_1984hosting": {
+    "fields": [{"name":"One984HOSTING_TOTP_Secret","required":true,"condition":{"context":"account2fa","operator":"equals","value":"true"},"descriptionEn":"Enter the Base32 shared secret only for an account with two-factor authentication.","descriptionRu":"Введите общий секрет Base32 только для учётной записи с двухфакторной аутентификацией."}],
+    "prerequisites":[{"en":"Two-factor authentication requires oathtool inside the executor.","ru":"Для двухфакторной аутентификации требуется oathtool внутри исполнителя."}]
+  },
+  "dns_acmedns": {
+    "authVariants":[
+      {"id":"registered","labelEn":"Existing acme-dns registration","labelRu":"Существующая регистрация acme-dns","fields":[{"name":"ACMEDNS_USERNAME","required":true},{"name":"ACMEDNS_PASSWORD","required":true},{"name":"ACMEDNS_SUBDOMAIN","required":true},{"name":"ACMEDNS_BASE_URL","required":false,"default":"https://auth.acme-dns.io"}]},
+      {"id":"register","labelEn":"Register interactively","labelRu":"Интерактивная регистрация","fields":[{"name":"ACMEDNS_BASE_URL","required":false,"default":"https://auth.acme-dns.io"}]}
+    ],
+    "prerequisites":[{"en":"New registration pauses for an operator to create the displayed CNAME delegation. Unattended execution needs an existing registration and its CNAME.","ru":"Новая регистрация ожидает, пока оператор создаст показанную CNAME-запись. Для автоматической работы нужны существующая регистрация и её CNAME."}]
+  },
+  "dns_aws": {
+    "fields":[{"name":"AWS_SESSION_TOKEN","descriptionEn":"Session token for temporary AWS credentials.","descriptionRu":"Токен сессии для временных реквизитов AWS.","required":false,"secret":true},{"name":"AWS_DNS_SLOWRATE","descriptionEn":"Optional delay between requests, in seconds.","descriptionRu":"Необязательная задержка между запросами, в секундах.","required":false,"secret":false,"type":"text"}],
+    "authVariants":[
+      {"id":"access-key","labelEn":"Access key","labelRu":"Ключ доступа","fields":[{"name":"AWS_ACCESS_KEY_ID","required":true},{"name":"AWS_SECRET_ACCESS_KEY","required":true},{"name":"AWS_SESSION_TOKEN","required":false},{"name":"AWS_DNS_SLOWRATE","required":false}]},
+      {"id":"runtime-role","labelEn":"Executor instance or container role","labelRu":"Роль экземпляра или контейнера исполнителя","fields":[{"name":"AWS_DNS_SLOWRATE","required":false}]}
+    ],
+    "prerequisites":[{"en":"Role authentication needs an AWS executor with its instance/container metadata endpoint and Route53 permissions. It is not available automatically on an ordinary VPS.","ru":"Для роли нужен исполнитель AWS с доступным endpoint метаданных экземпляра или контейнера и правами Route53. На обычной VPS такой доступ автоматически не появляется."}]
+  },
+  "dns_azion":{"displayName":"Azion"},
+  "dns_azure": {
+    "fields":[{"name":"AZUREDNS_MANAGEDIDENTITY","required":false,"secret":false,"type":"text","default":"false"},{"name":"AZUREDNS_PRIVATEZONE","required":false,"secret":false,"type":"text","default":"false"}],
+    "authVariants":[
+      {"id":"service-principal","labelEn":"Service principal","labelRu":"Сервисная учётная запись","fields":[{"name":"AZUREDNS_SUBSCRIPTIONID","required":true},{"name":"AZUREDNS_TENANTID","required":true},{"name":"AZUREDNS_APPID","required":true},{"name":"AZUREDNS_CLIENTSECRET","required":true},{"name":"AZUREDNS_MANAGEDIDENTITY","required":false,"default":"false"},{"name":"AZUREDNS_PRIVATEZONE","required":false,"default":"false"}]},
+      {"id":"managed-identity","labelEn":"Managed identity","labelRu":"Управляемая идентичность","fields":[{"name":"AZUREDNS_SUBSCRIPTIONID","required":true},{"name":"AZUREDNS_MANAGEDIDENTITY","required":true,"default":"true"},{"name":"AZUREDNS_PRIVATEZONE","required":false,"default":"false"}]},
+      {"id":"bearer-token","labelEn":"Short-lived bearer token","labelRu":"Короткоживущий токен доступа","fields":[{"name":"AZUREDNS_SUBSCRIPTIONID","required":true},{"name":"AZUREDNS_BEARERTOKEN","required":true},{"name":"AZUREDNS_MANAGEDIDENTITY","required":false,"default":"false"},{"name":"AZUREDNS_PRIVATEZONE","required":false,"default":"false"}]}
+    ],
+    "help":{"en":"The subscription is required for every method. A supplied bearer token is not persisted by this driver and must be supplied again on later runs. Private DNS must be reachable by the chosen CA's validation mechanism.","ru":"Подписка обязательна для любого способа. Переданный токен доступа драйвер не сохраняет: его нужно передавать при следующих запусках. Выбранный центр сертификации должен иметь возможность проверить записи приватной DNS-зоны."},
+    "prerequisites":[{"en":"Managed identity requires a compatible Azure executor with access to its metadata endpoint.","ru":"Управляемая идентичность требует подходящего исполнителя Azure с доступом к endpoint метаданных."}]
+  },
+  "dns_baidu": {
+    "authVariants":[{"id":"access-key","labelEn":"Baidu access key","labelRu":"Ключ доступа Baidu","fields":[{"name":"Baidu_AK","required":true},{"name":"Baidu_SK","required":true},{"name":"Baidu_BCD_Host","required":false,"default":"bcd.baidubce.com"},{"name":"Baidu_DNS_Host","required":false,"default":"dns.baidubce.com"},{"name":"Baidu_API_Preference","required":false,"default":"auto"},{"name":"Baidu_BCD_Version","required":false,"default":"1"},{"name":"Baidu_BCD_Expire","required":false,"default":"3600"},{"name":"Baidu_View","required":false,"default":"DEFAULT"},{"name":"Baidu_Line","required":false,"default":"default"},{"name":"Baidu_TTL","required":false,"default":"300"},{"name":"Baidu_RM_Max","required":false,"default":"20"}]}],
+    "help":{"en":"The extra options configure the API engine and record behavior; they are not a second authentication method.","ru":"Дополнительные параметры настраивают API и DNS-записи; это не второй способ аутентификации."}
+  },
+  "dns_beget": {
+    "replaceFields":true,
+    "fields":[{"name":"Beget_Username","descriptionEn":"Beget API username; the exact driver variable is case-sensitive.","descriptionRu":"Имя пользователя API Beget; имя переменной драйвера учитывает регистр.","required":true,"secret":true},{"name":"Beget_Password","descriptionEn":"Beget API password.","descriptionRu":"Пароль API Beget.","required":true,"secret":true}],
+    "authVariants":[{"id":"api-account","labelEn":"API account","labelRu":"Учётная запись API","fields":[{"name":"Beget_Username","required":true},{"name":"Beget_Password","required":true}]}]
+  },
+  "dns_cf": {
+    "fields":[{"name":"CF_Account_ID","required":false,"secret":false,"type":"text","descriptionEn":"Optional account filter for zone discovery.","descriptionRu":"Необязательный фильтр учётной записи при поиске зоны."},{"name":"CF_Zone_ID","required":false,"secret":false,"type":"text","descriptionEn":"Optional zone identifier; skips automatic zone discovery.","descriptionRu":"Необязательный идентификатор зоны; заменяет автоматический поиск зоны."}],
+    "authVariants":[
+      {"id":"api-token","labelEn":"API token","labelRu":"Токен API","fields":[{"name":"CF_Token","required":true},{"name":"CF_Account_ID","required":false},{"name":"CF_Zone_ID","required":false}]},
+      {"id":"global-key","labelEn":"Global API key and account email","labelRu":"Глобальный ключ API и email учётной записи","fields":[{"name":"CF_Key","required":true},{"name":"CF_Email","required":true}]}
+    ],
+    "credentialsUrl":"https://dash.cloudflare.com/profile/api-tokens"
+  },
+  "dns_dnsimple":{"fields":[{"name":"DNSimple_ACCOUNT_ID","required":true,"condition":{"context":"multipleAccounts","operator":"equals","value":"true"},"descriptionEn":"Account identifier is required if this token can see several accounts; otherwise the driver discovers it.","descriptionRu":"Идентификатор обязателен, если токен видит несколько учётных записей; иначе драйвер определяет его самостоятельно."}]},
+  "dns_cloudns": {
+    "fields":[{"name":"CLOUDNS_AUTH_ID","required":false},{"name":"CLOUDNS_SUB_AUTH_ID","required":false}],
+    "authVariants":[
+      {"id":"regular","labelEn":"Regular API identity","labelRu":"Основная учётная запись API","fields":[{"name":"CLOUDNS_AUTH_ID","required":true},{"name":"CLOUDNS_AUTH_PASSWORD","required":true}]},
+      {"id":"sub-user","labelEn":"Sub-user API identity","labelRu":"Дополнительная учётная запись API","fields":[{"name":"CLOUDNS_SUB_AUTH_ID","required":true},{"name":"CLOUDNS_AUTH_PASSWORD","required":true}]}
+    ]
+  },
+  "dns_creoline":{"fields":[{"name":"creolineApiToken","descriptionEn":"API token.","descriptionRu":"Токен API.","required":true,"secret":true},{"name":"creolineApiSecret","descriptionEn":"API secret.","descriptionRu":"Секрет API.","required":true,"secret":true}]},
+  "dns_cyon": {
+    "fields":[{"name":"CY_OTP_Secret","required":true,"condition":{"context":"account2fa","operator":"equals","value":"true"}}],
+    "prerequisites":[{"en":"Two-factor authentication requires oathtool in the executor. Non-ASCII domain conversion additionally requires the idn utility.","ru":"Для двухфакторной аутентификации нужен oathtool в исполнителе. Для преобразования доменов с нелатинскими символами дополнительно нужна утилита idn."}]
+  },
+  "dns_czechia": {
+    "displayName":"CZECHIA / ZONER",
+    "documentationUrl":"https://api.czechia.com/swagger/index.html",
+    "replaceFields":true,
+    "fields":[{"name":"CZ_AuthorizationToken","descriptionEn":"API authorization token from your CZECHIA/ZONER account.","descriptionRu":"Токен авторизации API из учётной записи CZECHIA/ZONER.","required":true,"secret":true},{"name":"CZ_Zones","descriptionEn":"DNS zones managed by this token, separated by spaces or commas.","descriptionRu":"DNS-зоны, доступные этому токену, через пробелы или запятые.","required":true,"secret":false,"type":"text"},{"name":"CZ_API_BASE","descriptionEn":"API base URL.","descriptionRu":"Базовый URL API.","required":false,"default":"https://api.czechia.com","secret":false,"type":"text"}],
+    "authVariants":[{"id":"api-token","labelEn":"API token","labelRu":"Токен API","fields":[{"name":"CZ_AuthorizationToken","required":true},{"name":"CZ_Zones","required":true},{"name":"CZ_API_BASE","required":false,"default":"https://api.czechia.com"}]}]
+  },
+  "dns_da":{"fields":[{"name":"DA_Api_Insecure","required":true,"secret":false,"type":"text","default":"0","descriptionEn":"Use 0 to verify the DirectAdmin TLS certificate; 1 disables verification.","descriptionRu":"Значение 0 включает проверку TLS-сертификата DirectAdmin; 1 отключает её."}]},
+  "dns_dynv6": {
+    "fields":[{"name":"KEY","required":false,"secret":false,"type":"text"}],
+    "authVariants":[
+      {"id":"rest-token","labelEn":"REST API token","labelRu":"Токен REST API","fields":[{"name":"DYNV6_TOKEN","required":true}]},
+      {"id":"ssh-key","labelEn":"Registered SSH key file","labelRu":"Файл зарегистрированного SSH-ключа","fields":[{"name":"KEY","required":true}]}
+    ],
+    "prerequisites":[{"en":"SSH mode requires ssh, an executor-readable private key already registered at dynv6, and host-key verification. Omitting the key invokes interactive key creation.","ru":"Режиму SSH нужны ssh, доступный исполнителю файл приватного ключа, уже зарегистрированного в dynv6, и проверка ключа сервера. Без ключа запускается интерактивное создание."}]
+  },
+  "dns_efficientip": {
+    "fields":[{"name":"EfficientIP_Creds","required":false},{"name":"EfficientIP_Token_Key","required":false},{"name":"EfficientIP_Token_Secret","required":false}],
+    "authVariants":[
+      {"id":"api-token","labelEn":"API token pair","labelRu":"Пара токенов API","fields":[{"name":"EfficientIP_Token_Key","required":true},{"name":"EfficientIP_Token_Secret","required":true},{"name":"EfficientIP_Server","required":true},{"name":"EfficientIP_DNS_Name","required":false},{"name":"EfficientIP_View","required":false}]},
+      {"id":"basic","labelEn":"Basic authentication","labelRu":"Логин и пароль","fields":[{"name":"EfficientIP_Creds","required":true},{"name":"EfficientIP_Server","required":true},{"name":"EfficientIP_DNS_Name","required":false},{"name":"EfficientIP_View","required":false}]}
+    ]
+  },
+  "dns_gandi_livedns": {
+    "fields":[{"name":"GANDI_LIVEDNS_TOKEN","descriptionEn":"Gandi personal access token.","descriptionRu":"Персональный токен доступа Gandi.","required":false,"secret":true},{"name":"GANDI_LIVEDNS_KEY","required":false}],
+    "authVariants":[
+      {"id":"access-token","labelEn":"Personal access token","labelRu":"Персональный токен доступа","fields":[{"name":"GANDI_LIVEDNS_TOKEN","required":true}]},
+      {"id":"legacy-key","labelEn":"Legacy API key","labelRu":"Устаревший ключ API","fields":[{"name":"GANDI_LIVEDNS_KEY","required":true}]}
+    ]
+  },
+  "dns_gcloud": {
+    "fields":[{"name":"CLOUDSDK_ACTIVE_CONFIG_NAME","required":false,"secret":false,"type":"text","default":"default"}],
+    "prerequisites":[{"en":"Requires the gcloud CLI inside the executor and a previously authenticated configuration with access to the target DNS project.","ru":"Нужны gcloud CLI внутри исполнителя и заранее настроенная авторизация с доступом к нужному проекту DNS."}]
+  },
+  "dns_googledomains":{"fields":[{"name":"GOOGLEDOMAINS_ZONE","required":false,"secret":false,"type":"text","descriptionEn":"Optional zone override; the driver can discover the zone.","descriptionRu":"Необязательная зона; драйвер может определить её самостоятельно."}]},
+  "dns_inwx":{"fields":[{"name":"INWX_Shared_Secret","required":true,"condition":{"context":"account2fa","operator":"equals","value":"true"}}],"prerequisites":[{"en":"Accounts with two-factor authentication require oathtool inside the executor.","ru":"Для учётных записей с двухфакторной аутентификацией нужен oathtool внутри исполнителя."}]},
+  "dns_ispconfig":{"fields":[{"name":"ISPC_Api_Insecure","required":true,"secret":false,"type":"text","default":"0"}]},
+  "dns_jd":{"fields":[{"name":"JD_REGION","required":false,"secret":false,"type":"text","default":"cn-north-1"}],"credentialsUrl":"https://uc.jdcloud.com/account/accesskey"},
+  "dns_kas":{"fields":[{"name":"KAS_Authtype","required":true,"secret":false,"type":"text","default":"plain","descriptionEn":"The form supplies plain explicitly; the driver does not apply the advertised default when the field is absent.","descriptionRu":"Форма явно передаёт plain: драйвер не применяет заявленное значение по умолчанию, если поле отсутствует."}]},
+  "dns_knot":{"prerequisites":[{"en":"Requires knsupdate inside the executor and access to the configured DNS server. KNOT_KEY contains TSIG key data, not a filename.","ru":"Нужны knsupdate внутри исполнителя и доступ к указанному DNS-серверу. KNOT_KEY содержит данные TSIG-ключа, а не имя файла."}]},
+  "dns_la": {
+    "replaceFields":true,
+    "fields":[{"name":"LA_Id","descriptionEn":"API identifier.","descriptionRu":"Идентификатор API.","required":true,"secret":true},{"name":"LA_Sk","descriptionEn":"API secret; LA_Token is computed by the driver.","descriptionRu":"Секрет API; LA_Token вычисляется драйвером.","required":true,"secret":true}],
+    "authVariants":[{"id":"api-key","labelEn":"API key pair","labelRu":"Пара ключей API","fields":[{"name":"LA_Id","required":true},{"name":"LA_Sk","required":true}]}],
+    "prerequisites":[{"en":"This pinned driver writes credentials through its upstream log function. The executor must suppress or sanitize that logging sink before use.","ru":"Этот закреплённый драйвер записывает реквизиты через функцию журнала acme.sh. Перед использованием исполнитель должен отключить или очистить этот канал журналирования."}]
+  },
+  "dns_level27":{"authVariants":[{"id":"api-key","labelEn":"API key","labelRu":"Ключ API","fields":[{"name":"LEVEL27_API_KEY","required":true},{"name":"LEVEL27_API","required":false,"default":"https://api.level27.eu/v1"}]}],"credentialsUrl":"https://app.level27.eu/account/profile/security"},
+  "dns_lexicon":{"prerequisites":[{"en":"Requires the Lexicon CLI, its chosen provider plugin and that plugin's credentials. PROVIDER alone is not an account credential; plugin fields are outside acme.sh's fixed metadata.","ru":"Нужны Lexicon CLI, выбранный модуль провайдера и его реквизиты. PROVIDER сам по себе не является реквизитом доступа; поля модуля находятся за пределами фиксированного каталога acme.sh."}]},
+  "dns_maradns":{"prerequisites":[{"en":"Requires executor access to a writable MaraDNS zone file and a readable Duende PID file; the driver changes the file and signals the DNS process.","ru":"Исполнителю нужны права записи в файл зоны MaraDNS и чтения файла PID Duende; драйвер изменяет файл и посылает сигнал процессу DNS."}]},
+  "dns_loopia":{"fields":[{"name":"LOOPIA_Api","required":false,"default":"https://api.loopia.se/RPCSERV","secret":false,"type":"text","descriptionEn":"Full XML-RPC API URL. The driver defaults to the Swedish endpoint, not the literal value se.","descriptionRu":"Полный URL XML-RPC API. По умолчанию драйвер использует шведский endpoint, а не строку se."}]},
+  "dns_myapi": {
+    "replaceFields":true,
+    "fields":[{"name":"MYAPI_Token","descriptionEn":"Example token field for a custom driver; the supplied sample does not call a provider API.","descriptionRu":"Пример поля токена для собственного драйвера; поставляемый образец не вызывает API провайдера.","required":true,"secret":true},{"name":"MYAPI_Variable2","descriptionEn":"Example option retained once despite duplicate upstream declarations.","descriptionRu":"Пример параметра, показанный один раз несмотря на повтор в описании upstream.","required":false,"default":"default value","secret":false,"type":"text"}],
+    "authVariants":[{"id":"custom-driver","labelEn":"Custom driver example","labelRu":"Образец собственного драйвера","fields":[{"name":"MYAPI_Token","required":true},{"name":"MYAPI_Variable2","required":false,"default":"default value"}]}],
+    "prerequisites":[{"en":"This is a development example. A real provider implementation and its own review are required before certificate issuance.","ru":"Это пример для разработчиков. Для выдачи сертификатов нужны реальная реализация провайдера и отдельная проверка."}]
+  },
+  "dns_mydevil": {
+    "replaceFields":true,"fields":[],
+    "authVariants":[{"id":"host-account","labelEn":"Authenticated MyDevil host account","labelRu":"Учётная запись на сервере MyDevil","fields":[]}],
+    "prerequisites":[{"en":"Runs only in the MyDevil hosting environment with its devil command and the authenticated host account. There are no portable API credential fields.","ru":"Работает только в среде хостинга MyDevil с командой devil и авторизованной учётной записью сервера. Переносимых полей реквизитов API нет."}]
+  },
+  "dns_netcup": {
+    "fields":[{"name":"NC_Apipw","required":false},{"name":"NC_CID","required":false},{"name":"NC_Apikey_Legacy","required":false}],
+    "authVariants":[
+      {"id":"rest","labelEn":"REST API key","labelRu":"Ключ REST API","fields":[{"name":"NC_Apikey","required":true}]},
+      {"id":"legacy","labelEn":"Legacy CCP API","labelRu":"Устаревший CCP API","fields":[{"name":"NC_Apikey","required":true},{"name":"NC_Apipw","required":true},{"name":"NC_CID","required":true}]},
+      {"id":"rest-with-legacy-fallback","labelEn":"REST key with legacy DNS fallback","labelRu":"Ключ REST с резервным доступом к старому DNS API","fields":[{"name":"NC_Apikey","required":true},{"name":"NC_Apikey_Legacy","required":true},{"name":"NC_Apipw","required":true},{"name":"NC_CID","required":true}]}
+    ],
+    "help":{"en":"The driver chooses REST for a 64-character key and legacy CCP otherwise. Some domains need the complete legacy fallback credential set even with a REST key.","ru":"Драйвер выбирает REST для ключа длиной 64 символа, иначе CCP. Для некоторых доменов даже с ключом REST нужен полный резервный набор реквизитов старого API."}
+  },
+  "dns_nsd":{"prerequisites":[{"en":"Requires writable access to the NSD zone file and an operator-defined reload command. The upstream driver evaluates that command; a managed executor must separately authorize this capability.","ru":"Нужны права записи в файл зоны NSD и заданная оператором команда перезагрузки. Upstream исполняет эту команду; управляемый исполнитель должен отдельно разрешить такую возможность."}]},
+  "dns_nsupdate":{"prerequisites":[{"en":"Requires nsupdate inside the executor, access to the DNS server and, when configured, a readable TSIG key file. An empty key works only if the server permits that update method.","ru":"Нужны nsupdate внутри исполнителя, доступ к DNS-серверу и, при использовании ключа, доступный для чтения файл TSIG. Без ключа работа возможна только при разрешённом сервером способе обновления."}]},
+  "dns_oci": {
+    "fields":[{"name":"OCI_CLI_KEY","secret":true,"type":"textarea","maxLength":32768},{"name":"OCI_CLI_CONFIG_FILE","descriptionEn":"Executor-local OCI configuration file.","descriptionRu":"Файл конфигурации OCI внутри исполнителя.","required":false,"secret":false,"type":"text"},{"name":"OCI_CLI_PROFILE","descriptionEn":"OCI configuration profile.","descriptionRu":"Профиль конфигурации OCI.","required":false,"default":"DEFAULT","secret":false,"type":"text"}],
+    "authVariants":[
+      {"id":"inline-key","labelEn":"Inline signing key","labelRu":"Данные ключа подписи","fields":[{"name":"OCI_CLI_TENANCY","required":true},{"name":"OCI_CLI_USER","required":true},{"name":"OCI_CLI_REGION","required":true},{"name":"OCI_CLI_KEY","required":true}]},
+      {"id":"key-file","labelEn":"Signing key file","labelRu":"Файл ключа подписи","fields":[{"name":"OCI_CLI_TENANCY","required":true},{"name":"OCI_CLI_USER","required":true},{"name":"OCI_CLI_REGION","required":true},{"name":"OCI_CLI_KEY_FILE","required":true}]},
+      {"id":"config-profile","labelEn":"Existing executor configuration","labelRu":"Существующая конфигурация исполнителя","fields":[{"name":"OCI_CLI_CONFIG_FILE","required":false},{"name":"OCI_CLI_PROFILE","required":false,"default":"DEFAULT"}]}
+    ],
+    "prerequisites":[{"en":"The configuration variant needs an executor-local OCI profile containing tenancy, user, region and signing key access. Config/key paths must be independently admitted by the executor; no OCI CLI is required by this driver.","ru":"Варианту с конфигурацией нужен профиль OCI внутри исполнителя с tenancy, user, region и доступом к ключу подписи. Пути конфигурации и ключа отдельно проверяет исполнитель; этот драйвер не требует OCI CLI."}]
+  },
+  "dns_openstack": {
+    "fields":[{"name":"OS_IDENTITY_API_VERSION","descriptionEn":"Keystone identity API version.","descriptionRu":"Версия API идентификации Keystone.","required":false,"default":"3","secret":false,"type":"text"},{"name":"OS_AUTH_TYPE","descriptionEn":"Authentication plugin selected by the OpenStack CLI.","descriptionRu":"Модуль аутентификации, используемый OpenStack CLI.","required":false,"secret":false,"type":"text"},{"name":"OS_APPLICATION_CREDENTIAL_ID","descriptionEn":"Application credential identifier.","descriptionRu":"Идентификатор реквизитов приложения.","required":false,"secret":false,"type":"text"},{"name":"OS_APPLICATION_CREDENTIAL_SECRET","descriptionEn":"Application credential secret.","descriptionRu":"Секрет реквизитов приложения.","required":false,"secret":true},{"name":"OS_PROJECT_ID","descriptionEn":"Project identifier, used instead of the project name.","descriptionRu":"Идентификатор проекта вместо его имени.","required":false,"secret":false,"type":"text"},{"name":"OS_USER_DOMAIN_ID","descriptionEn":"User domain identifier, used instead of the domain name.","descriptionRu":"Идентификатор домена пользователя вместо его имени.","required":false,"secret":false,"type":"text"},{"name":"OS_PROJECT_DOMAIN_ID","descriptionEn":"Project domain identifier, used instead of the domain name.","descriptionRu":"Идентификатор домена проекта вместо его имени.","required":false,"secret":false,"type":"text"}],
+    "authVariants":[
+      {"id":"application-credential","labelEn":"Application credentials","labelRu":"Реквизиты приложения","fields":[{"name":"OS_AUTH_URL","required":true},{"name":"OS_AUTH_TYPE","required":true,"default":"v3applicationcredential"},{"name":"OS_IDENTITY_API_VERSION","required":false,"default":"3"},{"name":"OS_APPLICATION_CREDENTIAL_ID","required":true},{"name":"OS_APPLICATION_CREDENTIAL_SECRET","required":true}]},
+      {"id":"password-project-name","labelEn":"Password and project name","labelRu":"Пароль и имя проекта","fields":[{"name":"OS_AUTH_URL","required":true},{"name":"OS_AUTH_TYPE","required":false,"default":"password"},{"name":"OS_IDENTITY_API_VERSION","required":false,"default":"3"},{"name":"OS_USERNAME","required":true},{"name":"OS_PASSWORD","required":true},{"name":"OS_PROJECT_NAME","required":true},{"name":"OS_PROJECT_DOMAIN_NAME","required":false},{"name":"OS_USER_DOMAIN_NAME","required":false},{"name":"OS_PROJECT_DOMAIN_ID","required":false},{"name":"OS_USER_DOMAIN_ID","required":false}]},
+      {"id":"password-project-id","labelEn":"Password and project ID","labelRu":"Пароль и идентификатор проекта","fields":[{"name":"OS_AUTH_URL","required":true},{"name":"OS_AUTH_TYPE","required":false,"default":"password"},{"name":"OS_IDENTITY_API_VERSION","required":false,"default":"3"},{"name":"OS_USERNAME","required":true},{"name":"OS_PASSWORD","required":true},{"name":"OS_PROJECT_ID","required":true},{"name":"OS_PROJECT_DOMAIN_NAME","required":false},{"name":"OS_USER_DOMAIN_NAME","required":false},{"name":"OS_PROJECT_DOMAIN_ID","required":false},{"name":"OS_USER_DOMAIN_ID","required":false}]}
+    ],
+    "prerequisites":[{"en":"Requires OpenStackClient and its Designate plugin inside the executor. Domain name/ID requirements depend on the Keystone deployment and must be checked by that client.","ru":"Нужны OpenStackClient и его модуль Designate внутри исполнителя. Требования к именам и идентификаторам доменов зависят от настройки Keystone и проверяются этим клиентом."}]
+  },
+  "dns_opnsense":{"fields":[{"name":"OPNs_Api_Insecure","required":false,"secret":false,"type":"text","default":"0"}]},
+  "dns_optidata":{"fields":[{"name":"OPTIDATA_Location","required":false,"descriptionEn":"Set the location code or UUID when zone discovery cannot determine the location outside the account default.","descriptionRu":"Укажите код или UUID расположения, если поиск зоны не может определить расположение вне основного расположения аккаунта."}]},
+  "dns_ovh":{"prerequisites":[{"en":"Provide an already validated consumer key for unattended execution. Without it the driver creates an authorization request and requires operator approval before retry.","ru":"Для автоматической работы передайте уже подтверждённый ключ потребителя. Без него драйвер создаёт запрос авторизации, который оператор должен подтвердить перед повтором."}]},
+  "dns_poweradmin":{"fields":[{"name":"POWERADMIN_API_VERSION","required":false,"default":"2","secret":false,"type":"text"}]},
+  "dns_rcode0":{"fields":[{"name":"RCODE0_URL","required":false,"default":"https://my.rcodezero.at","secret":false,"type":"text"}]},
+  "dns_regru":{"credentialsUrl":"https://www.reg.ru/user/account/#/settings/api/","help":{"en":"Create an API alternative password and allow the executor's public outbound IP in the REG.RU API settings. Use the account login and that special API password.","ru":"Создайте альтернативный пароль API и разрешите публичный исходящий IP исполнителя в настройках API REG.RU. Используйте логин учётной записи и этот специальный пароль API."}},
+  "dns_selectel": {
+    "authVariants":[
+      {"id":"v2-service-user","labelEn":"Current API v2 service user","labelRu":"Сервисный пользователь текущего API v2","fields":[{"name":"SL_Ver","required":true,"default":"v2"},{"name":"SL_Login_ID","required":true},{"name":"SL_Project_Name","required":true},{"name":"SL_Login_Name","required":true},{"name":"SL_Pswd","required":true},{"name":"SL_Expire","required":false,"default":"1400"}]},
+      {"id":"legacy-v1","labelEn":"Deprecated API v1 key","labelRu":"Ключ устаревшего API v1","fields":[{"name":"SL_Ver","required":true,"default":"v1"},{"name":"SL_Key","required":true}]}
+    ]
+  },
+  "dns_selfhost":{"fields":[{"name":"SELFHOSTDNS_MAP","required":true,"descriptionEn":"Map each complete challenge name to one or two existing numeric record IDs: name:RID[:RID]. The driver updates existing records.","descriptionRu":"Сопоставьте полное имя каждой проверочной записи с одним или двумя существующими числовыми ID: имя:RID[:RID]. Драйвер обновляет существующие записи."}]},
+  "dns_technitium": {
+    "replaceFields":true,
+    "fields":[{"name":"Technitium_Server","descriptionEn":"Technitium server URL.","descriptionRu":"URL сервера Technitium.","required":true,"secret":false,"type":"text"},{"name":"Technitium_Token","descriptionEn":"API token.","descriptionRu":"Токен API.","required":true,"secret":true},{"name":"Technitium_Expirty_Ttl","descriptionEn":"Auto-removal time in seconds. The pinned driver reads this misspelled environment variable; 0 uses explicit cleanup.","descriptionRu":"Время автоматического удаления в секундах. Закреплённый драйвер читает переменную с таким написанием; 0 включает явное удаление.","required":false,"default":"0","secret":false,"type":"text"}],
+    "authVariants":[{"id":"api-token","labelEn":"API token","labelRu":"Токен API","fields":[{"name":"Technitium_Server","required":true},{"name":"Technitium_Token","required":true},{"name":"Technitium_Expirty_Ttl","required":false,"default":"0"}]}]
+  },
+  "dns_transip":{"prerequisites":[{"en":"Requires an executor-readable private signing key file and API access enabled for the TransIP account. A path field does not authorize access to arbitrary host files.","ru":"Нужны доступный исполнителю файл приватного ключа подписи и включённый доступ к API учётной записи TransIP. Поле пути не разрешает чтение произвольных файлов хоста."}]},
+  "dns_volcengine":{"fields":[{"name":"Volcengine_SESSION_TOKEN","required":true,"condition":{"context":"temporaryCredentials","operator":"equals","value":"true"}}]},
+  "dns_yandex360": {
+    "authVariants":[
+      {"id":"access-token","labelEn":"Existing OAuth access token","labelRu":"Существующий токен доступа OAuth","fields":[{"name":"YANDEX360_ACCESS_TOKEN","required":true},{"name":"YANDEX360_ORG_ID","required":false}]},
+      {"id":"device-oauth","labelEn":"Interactive OAuth application authorization","labelRu":"Интерактивная авторизация OAuth-приложения","fields":[{"name":"YANDEX360_CLIENT_ID","required":true},{"name":"YANDEX360_CLIENT_SECRET","required":true},{"name":"YANDEX360_ORG_ID","required":false}]}
+    ],
+    "prerequisites":[{"en":"OAuth application mode may require device-code approval by the operator. An existing access token alone cannot guarantee unattended renewal after expiry.","ru":"Режим OAuth-приложения может требовать подтверждения кода устройства оператором. Один токен доступа не гарантирует автоматическое продление после истечения срока."}]
+  },
+  "dns_yc": {
+    "fields":[{"name":"YC_Zone_ID","required":false,"secret":false,"type":"text"},{"name":"YC_Folder_ID","required":false,"secret":false,"type":"text"},{"name":"YC_SA_Key_File_PEM_b64","type":"textarea","maxLength":32768,"secret":true}],
+    "authVariants":[
+      {"id":"zone-inline-key","labelEn":"Zone ID and inline RSA key","labelRu":"ID зоны и данные RSA-ключа","fields":[{"name":"YC_Zone_ID","required":true},{"name":"YC_SA_ID","required":true},{"name":"YC_SA_Key_ID","required":true},{"name":"YC_SA_Key_File_PEM_b64","required":true}]},
+      {"id":"folder-inline-key","labelEn":"Folder lookup and inline RSA key","labelRu":"Поиск в каталоге и данные RSA-ключа","fields":[{"name":"YC_Folder_ID","required":true},{"name":"YC_SA_ID","required":true},{"name":"YC_SA_Key_ID","required":true},{"name":"YC_SA_Key_File_PEM_b64","required":true}]},
+      {"id":"zone-key-file","labelEn":"Zone ID and RSA key file","labelRu":"ID зоны и файл RSA-ключа","fields":[{"name":"YC_Zone_ID","required":true},{"name":"YC_SA_ID","required":true},{"name":"YC_SA_Key_ID","required":true},{"name":"YC_SA_Key_File_Path","required":true}]},
+      {"id":"folder-key-file","labelEn":"Folder lookup and RSA key file","labelRu":"Поиск в каталоге и файл RSA-ключа","fields":[{"name":"YC_Folder_ID","required":true},{"name":"YC_SA_ID","required":true},{"name":"YC_SA_Key_ID","required":true},{"name":"YC_SA_Key_File_Path","required":true}]}
+    ],
+    "prerequisites":[{"en":"Use an authorized RSA service-account key. Inline key data is Base64-encoded PEM. The executor needs an isolated protected working directory because the driver materializes an inline key there.","ru":"Используйте авторизованный RSA-ключ сервисного аккаунта. Встроенные данные — PEM в Base64. Исполнителю нужен изолированный защищённый рабочий каталог: драйвер временно записывает туда встроенный ключ."}]
+  },
+  "dns_zonomi":{"authVariants":[{"id":"api-key","labelEn":"API key","labelRu":"Ключ API","fields":[{"name":"ZM_Key","required":true},{"name":"ZM_Api","required":false,"default":"https://zonomi.com/app/dns/dyndns.jsp"}]}]}
+}}

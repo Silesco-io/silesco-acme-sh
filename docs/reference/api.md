@@ -1,14 +1,14 @@
 # PHP API reference
 
-Generated from PHPDoc and reflection; do not edit. Version 0.1.0-alpha.1.
+Generated from PHPDoc and reflection; do not edit. Version 0.2.0-alpha.1.
 
 ## Silesco\AcmeSh\Catalog
 
-/** Pinned upstream inventory. A listed provider does not imply a reviewed form or tested account. */
+/** Complete version-pinned driver metadata; form coverage is not a live account test. */
 
 ### bundled
 
-/** Load shipped immutable data, without network access or code execution. */
+/** Load immutable package resources; no network access or metadata execution. */
 
 ```php
 static bundled(): Silesco\AcmeSh\Catalog
@@ -16,7 +16,7 @@ static bundled(): Silesco\AcmeSh\Catalog
 
 ### all
 
-/** Complete pinned driver inventory keyed by exact upstream provider ID. */
+/** All DNS drivers at the pinned release, keyed by their exact upstream IDs. */
 
 ```php
 all(): array
@@ -24,7 +24,7 @@ all(): array
 
 ### upstream
 
-/** Exact upstream provenance for the inventory. */
+/** Exact version, commit, source hashes and release provenance. */
 
 ```php
 upstream(): array
@@ -32,7 +32,7 @@ upstream(): array
 
 ### provider
 
-/** Return metadata or reject unsupported/unpinned driver names. */
+/** Return metadata, or reject unsupported/unpinned driver names. */
 
 ```php
 provider(string $id): array
@@ -40,18 +40,18 @@ provider(string $id): array
 
 ### form
 
-/** Return reviewed localized field descriptors. Never returns credential values. */
+/** Localized form for an explicit authorization variant, or its declared default. */
 
 ```php
-form(string $id, string $locale): array
+form(string $id, string $locale = 'en', ?string $variantId = NULL): array
 ```
 
 ### validateCredentials
 
-/** Validate only reviewed form shape; never logs, persists, returns or probes supplied credentials. */
+/** Validate field shape/declared requirements, not provider account access or authorization. */
 
 ```php
-validateCredentials(string $id, array $values): void
+validateCredentials(string $id, array $values, ?string $variantId = NULL): void
 ```
 
 ## Silesco\AcmeSh\CertificateRequest
@@ -110,6 +110,143 @@ submit(Silesco\AcmeSh\CertificateRequest $request): Silesco\AcmeSh\Operation
 poll(string $operationId): Silesco\AcmeSh\Operation
 ```
 
+## Silesco\AcmeSh\Local\CertificateVerifier
+
+/** Read back actual issuance material; command exit status never proves a certificate was issued. */
+
+### verify
+
+/** Verify bounded PEM, exact SANs, time, chain against fixed roots and matching private key; returns public metadata only. */
+
+```php
+static verify(string $certRoot, array $domains, string $trustBundle): array
+```
+
+## Silesco\AcmeSh\Local\CredentialResolver
+
+/** Developer-supplied secret custody boundary; no default store, file lookup or logging. */
+
+### resolve
+
+/** Resolve an opaque handle into exact provider environment fields; never log values or exceptions. */
+
+```php
+resolve(string $providerId, string $reference): array
+```
+
+## Silesco\AcmeSh\Local\LocalExecutor
+
+/** Opt-in synchronous Linux worker for independent applications, not a Silesco web/host executor. */
+
+### __construct
+
+/** Construction is a trusted configuration boundary; never construct policy/runner from web input. */
+
+```php
+__construct(Silesco\AcmeSh\Local\Policy $policy, ?Silesco\AcmeSh\Local\CredentialResolver $credentials = NULL, ?Silesco\AcmeSh\Local\ProcessRunner $runner = NULL)
+```
+
+### submit
+
+/** Issue once under a durable lock. Replays read the same terminal result, never another CA request. */
+
+```php
+submit(Silesco\AcmeSh\CertificateRequest $request): Silesco\AcmeSh\Operation
+```
+
+### poll
+
+/** Read-only polling. It never starts issuance or guesses success after worker loss. */
+
+```php
+poll(string $operationId): Silesco\AcmeSh\Operation
+```
+
+### certificateMetadata
+
+/** Public metadata only; private key values, provider responses and credentials never enter results. */
+
+```php
+certificateMetadata(string $operationId): ?array
+```
+
+### __debugInfo
+
+/** Hide collaborators and credential storage implementations from accidental object dumps. */
+
+```php
+__debugInfo(): array
+```
+
+### __serialize
+
+/** Do not serialize a credential resolver, runner or trusted execution authority. */
+
+```php
+__serialize(): array
+```
+
+### __unserialize
+
+/** Trusted runtime policy cannot be restored from serialized input. */
+
+```php
+__unserialize(array $data): void
+```
+
+## Silesco\AcmeSh\Local\NativeProcessRunner
+
+/** Shell-free argv launch of a fixed reviewed shell script; own process group and bounded discarded output. */
+
+### run
+
+/** No inherited environment, stdout buffer, logging or exception containing credentials. */
+
+```php
+run(array $arguments, array $environment, string $workingDirectory, int $timeoutSeconds): int
+```
+
+## Silesco\AcmeSh\Local\Policy
+
+/** Explicit standalone Linux execution policy. Request payload cannot change paths, CA or command. */
+
+### __construct
+
+/** Terms acceptance is an explicit developer decision for the selected CA, never a default. */
+
+```php
+__construct(string $sourceRoot, string $stateRoot, string $caDirectory, string $accountEmail, bool $acceptTerms, string $certificateTrustBundle, ?string $webroot = NULL, int $timeoutSeconds = 300, array $allowedProviders = array (
+))
+```
+
+### verifySource
+
+/** Verify exact reviewed acme.sh and every pinned DNS driver before process execution. */
+
+```php
+verifySource(): void
+```
+
+### directory
+
+/** Validate existing canonical directory without symlink components; private state must be owner-only. */
+
+```php
+static directory(string $path, bool $private): string
+```
+
+## Silesco\AcmeSh\Local\ProcessRunner
+
+/** Trusted process boundary, injectable only by application construction, not request input. */
+
+### run
+
+/** Return exit code, or stable acme.timeout/acme.executor_unavailable; discard all raw output. */
+
+```php
+run(array $arguments, array $environment, string $workingDirectory, int $timeoutSeconds): int
+```
+
 ## Silesco\AcmeSh\Operation
 
 /** Immutable safe executor result; raw provider output and certificates are deliberately absent. */
@@ -119,7 +256,7 @@ poll(string $operationId): Silesco\AcmeSh\Operation
 /** Construct a result bound to exactly one request; retries are bounded by executor policy. */
 
 ```php
-__construct(string $operationId, string $requestBinding, Silesco\AcmeSh\OperationState $state, ?string $errorCode, ?int $retryAfterSeconds)
+__construct(string $operationId, string $requestBinding, Silesco\AcmeSh\OperationState $state, ?string $errorCode = NULL, ?int $retryAfterSeconds = NULL)
 ```
 
 ### assertFor
