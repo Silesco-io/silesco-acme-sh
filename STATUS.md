@@ -1,5 +1,11 @@
 # Текущее состояние
 
+## Received architecture 1.24.0 — 2026-10-03
+
+Source commit: `8cbde7d6`. See [receipt](docs/architecture-1.24.0-receipt.md).
+Public PHP SDK is independent of Yii/runtime execution. Provider catalog exists; DNS credential form and root integration require their own acceptance.
+This is receipt, not complete runtime conformance or hosted publication.
+
 ## PHP SDK 0.1.0-alpha.1 — 2026-09-21
 
 Applied architecture: 1.23.0 / ADR-091. Implemented framework-independent catalog,

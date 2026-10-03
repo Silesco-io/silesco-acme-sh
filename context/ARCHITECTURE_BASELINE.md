@@ -1,9 +1,26 @@
 # Актуальная архитектурная база Silesco.io
 
-**Architecture baseline:** 1.23.0
-**Snapshot date:** 2026-09-21
+**Architecture baseline:** 1.24.0
+**Snapshot date:** 2026-10-03
 
 Этот файл фиксирует глобальные решения архитектуры. Это не версия продукта или компонента. При расхождении он имеет приоритет над старыми схемами и примерами; точная дельта версий находится в `context/ARCHITECTURE_CHANGELOG.md`.
+
+## BASE-074: Первоначальный Installer — прозрачный Shell startup
+
+ADR-092 ограничивает Installer подготовкой хоста, официальными Docker/CrowdSec
+repositories, проверенной поставкой компонентов, self-signed HTTPS и запуском
+Nginx/Yii3 Wizard. jq, Python и отдельный compiled Installer ради parsing не
+устанавливаются; внешний JSON/Base64 JSON исключён из пользовательского CLI.
+Системный Python не удаляется. Fixed scalar state читается как данные без
+source/eval. JSON контрактов служб/Wizard не меняется. Подробности — модуль24.
+
+ACME/DNS/KMS/Vault/PWA и дальнейшая настройка используют общие PHP-модули
+Wizard/UI и соответствующий авторизованный mutation path. Новый startup не
+подключает legacy jq/Python orchestration. PTR с forward-check даёт лишь optional
+hint домена; IP fallback сохраняется. Терминал показывает ru/en этапы и реальный
+progress, подробности в root-only журнале без секретов. Cleanup касается только
+собственных startup resources; пакеты/чужие данные остаются. Publication требует
+clean-install acceptance; новая упаковка не мигрирует активную legacy session.
 
 ## BASE-073: Yii3 Wizard использует общий с панелью runtime и модули
 

@@ -1,8 +1,8 @@
 {
   "schema": "io.silesco.architecture.generated-snapshot/v1",
   "schemaVersion": 1,
-  "architectureVersion": "1.23.0",
-  "snapshotDate": "2026-09-21",
+  "architectureVersion": "1.24.0",
+  "snapshotDate": "2026-10-03",
   "managedRoots": [
     "context",
     "spec"
@@ -12,15 +12,15 @@
   "files": [
     {
       "path": "context/ARCHITECTURE_BASELINE.md",
-      "sha256": "14f09811068c20c8bff394b4424a520693c27ee524a005366a5dad1f62784c22"
+      "sha256": "21c153a78f7ce42fba04e73e20d34f4b8d3d8d737cd9725d932be8e31b0e0f69"
     },
     {
       "path": "context/ARCHITECTURE_CHANGELOG.md",
-      "sha256": "37f050d07af16c4e944ff3cf791a1e5ad5d2b76e4df868564691d55998245c75"
+      "sha256": "36d59490ed99e03b797db8e1ef7c7a9bb5a401253a7a0d1048ef0df23a606bc6"
     },
     {
       "path": "context/ARCHITECTURE_VERSION",
-      "sha256": "8fc21140add9202a29f2eec0793eaa9dcf4065a756d9d91775190096d44a62aa"
+      "sha256": "674f4a09248743250e5a3af0542b31ac96a6031a254069470b83b1a4e14210f8"
     },
     {
       "path": "context/SILESCO_CONTEXT.md",
@@ -72,7 +72,7 @@
     },
     {
       "path": "spec/24_wizard_yii_bootstrap.md",
-      "sha256": "45fd9aed2715c5a605f348b32ee22c2a1dc70e80373b55fb418def92ccbc0b87"
+      "sha256": "7e53eb39a3cd6c608201f7f038ad2d077b7760209fc4fc280234c301f4d3ef0e"
     }
   ]
 }
